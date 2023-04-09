@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ESNext",                                 
+    "module": "CommonJS",                               
+
+    /* Emit */
+    "removeComments": true,                          
+    "esModuleInterop": true,                            
+    "forceConsistentCasingInFileNames": true,           
+
+    "outDir": "dist",
+    /* Type Checking */
+    "strict": true,                                     
+    "skipLibCheck": true                                
+  },
+  "include": [
+    "src/**/*",
+    "jest.config.ts"
+  ],
+  "exclude": ["node_modules"]
+}
