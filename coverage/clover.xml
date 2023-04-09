@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681025554512" clover="3.2.0">
-  <project timestamp="1681025554512" name="All files">
-    <metrics statements="113" coveredstatements="103" conditionals="28" coveredconditionals="23" methods="18" coveredmethods="12" elements="159" coveredelements="138" complexity="0" loc="113" ncloc="113" packages="5" files="7" classes="7"/>
+<coverage generated="1681044886731" clover="3.2.0">
+  <project timestamp="1681044886731" name="All files">
+    <metrics statements="108" coveredstatements="100" conditionals="21" coveredconditionals="19" methods="15" coveredmethods="10" elements="144" coveredelements="129" complexity="0" loc="108" ncloc="108" packages="6" files="8" classes="8"/>
     <package name="useBoolean">
       <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useBoolean/index.ts">
@@ -57,6 +57,29 @@
         <line num="15" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="useSetState">
+      <metrics statements="17" coveredstatements="17" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useSetState/index.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="useUnmount">
       <metrics statements="19" coveredstatements="15" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useUnmount/index.ts">
@@ -102,53 +125,31 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="38" coveredstatements="36" conditionals="13" coveredconditionals="10" methods="11" coveredmethods="5"/>
-      <file name="env.js" path="/Users/melon95/repository/react-hooks/src/utils/env.js">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
+      <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="1"/>
+      <file name="env.ts" path="/Users/melon95/repository/react-hooks/src/utils/env.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
-      <file name="index.js" path="/Users/melon95/repository/react-hooks/src/utils/index.js">
-        <metrics statements="18" coveredstatements="16" conditionals="9" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="21" type="stmt"/>
-        <line num="4" count="21" type="stmt"/>
-        <line num="5" count="21" type="cond" truecount="0" falsecount="2"/>
-        <line num="6" count="21" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="21" type="stmt"/>
-        <line num="8" count="21" type="stmt"/>
-        <line num="9" count="3" type="cond" truecount="0" falsecount="1"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/utils/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
       </file>
-      <file name="type.js" path="/Users/melon95/repository/react-hooks/src/utils/type.js">
-        <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="1"/>
-        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
+      <file name="type.ts" path="/Users/melon95/repository/react-hooks/src/utils/type.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
     </package>
   </project>
