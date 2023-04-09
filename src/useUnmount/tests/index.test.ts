@@ -2,7 +2,7 @@ import { renderHook } from "@testing-library/react"
 import useUnmount from "../"
 
 describe('useUnmount', () => {
-  it('test useUnmount', () => {
+  test('test useUnmount', () => {
     const fn = jest.fn()
     const hook = renderHook(() => useUnmount(fn))
     expect(fn).toHaveBeenCalledTimes(0)

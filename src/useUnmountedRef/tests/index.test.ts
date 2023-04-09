@@ -2,7 +2,7 @@ import { renderHook } from "@testing-library/react";
 import useUnmountedRef from "../";
 
 describe("useUnmountedRef", () => {
-  it("test useUnmountedRef", () => {
+  test("test useUnmountedRef", () => {
     const hook = renderHook(() => useUnmountedRef());
     expect(hook.result.current.current).toBe(false);
     hook.rerender()

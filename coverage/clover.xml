@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681022664656" clover="3.2.0">
-  <project timestamp="1681022664656" name="All files">
-    <metrics statements="85" coveredstatements="75" conditionals="22" coveredconditionals="17" methods="14" coveredmethods="8" elements="121" coveredelements="100" complexity="0" loc="85" ncloc="85" packages="4" files="6" classes="6"/>
+<coverage generated="1681025554512" clover="3.2.0">
+  <project timestamp="1681025554512" name="All files">
+    <metrics statements="113" coveredstatements="103" conditionals="28" coveredconditionals="23" methods="18" coveredmethods="12" elements="159" coveredelements="138" complexity="0" loc="113" ncloc="113" packages="5" files="7" classes="7"/>
+    <package name="useBoolean">
+      <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useBoolean/index.ts">
+        <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="26" count="7" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="useMount">
       <metrics statements="15" coveredstatements="11" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useMount/index.ts">

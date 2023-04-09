@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react'
 import useMount from '../'
 
 describe('useMount', () => {
-  it('test useMount', () => {
+  test('test useMount', () => {
     const fn = jest.fn()
     const hook = renderHook(() => useMount(fn))
     expect(fn).toHaveBeenCalledTimes(1)
