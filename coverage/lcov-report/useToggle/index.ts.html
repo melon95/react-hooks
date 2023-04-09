@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils/type.ts</title>
+    <title>Code coverage report for useToggle/index.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> type.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">useToggle</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>26/26</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">87.5% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -76,7 +76,30 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -86,23 +109,36 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const isFunction = (value: any): value is Function =&gt; typeof value === 'function'
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useMemo, useState } from "react"
 &nbsp;
-export const isArray = <span class="fstat-no" title="function not covered" >(value: any): value is Array&lt;any&gt; =&gt; Array.isArray(value)</span>
+interface StateAction&lt;T&gt; {
+  setLeft: () =&gt; void
+  setRight: () =&gt; void
+  toggle: () =&gt; void
+  set: (value: T) =&gt; void
+}
 &nbsp;
-const toString = Object.prototype.toString
+function useToggle&lt;L, R&gt;(leftValue: L, rightValue: R): [L | R, StateAction&lt;L | R&gt;] {
+  const [state, setState] = useState&lt;L | R&gt;(leftValue)
+  const action = useMemo(() =&gt; {
+    const setLeft = () =&gt; setState(leftValue)
+    const setRight = () =&gt; setState(rightValue)
+    const toggle = () =&gt; setState((prev) =&gt; (prev === leftValue ? rightValue <span class="branch-0 cbranch-no" title="branch not covered" >: leftValue)</span>)
+    return {
+      setLeft,
+      setRight,
+      toggle,
+      set: (value: L | R) =&gt; setState(value)
+    }
+  }, [])
+  return [state, action]
+}
 &nbsp;
-export const isObject = <span class="fstat-no" title="function not covered" >(value: any): value is Object =&gt; toString.call(value) === '[object Object]'</span>
-&nbsp;
-export const isString = <span class="fstat-no" title="function not covered" >(value: any): value is string =&gt; typeof value === 'string'</span>
-&nbsp;
-export const isBoolean = <span class="fstat-no" title="function not covered" >(value: any): value is boolean =&gt; typeof value === 'boolean'</span>
-&nbsp;
-export const isNumber = <span class="fstat-no" title="function not covered" >(value: any): value is number =&gt; typeof value === 'number'</span>
-&nbsp;</pre></td></tr></table></pre>
+export default useToggle</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
