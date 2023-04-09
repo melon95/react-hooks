@@ -3,9 +3,9 @@ import { isFunction } from "../utils";
 
 type StateReducer<T> = (state: T) => Partial<T>;
 
-type SetStateAction<T> = (prevState: Partial<T> | StateReducer<T>) => void;
+type SetState<T> = (prevState: Partial<T> | StateReducer<T>) => void;
 
-function useSetState<T>(initialState: T | (() => T)): [T, SetStateAction<T>] {
+function useSetState<T extends Record<string, any>>(initialState: T | (() => T)): [T, SetState<T>] {
   const [state, setState] = useState(initialState);
   const setMergedState = (newState: Partial<T> | StateReducer<T>) => {
 
