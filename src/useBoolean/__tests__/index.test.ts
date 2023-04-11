@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import useBoolean from '../';
+import useBoolean from '..';
 describe('useBoolean', () => {
   test('test useBoolean', () => {
     const { result } = renderHook(() => useBoolean());

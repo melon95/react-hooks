@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import useUnmountedRef from "../";
+import useUnmountedRef from "..";
 
 describe("useUnmountedRef", () => {
   test("test useUnmountedRef", () => {
