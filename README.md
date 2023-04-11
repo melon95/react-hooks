@@ -30,7 +30,7 @@
 - [x] useSetState
 - [x] useBoolean
 - [x] useToggle
-- [ ] useUrlState
+- [x] useUrlState
 - [ ] useCookieState
 - [ ] useLocalStorageState
 - [ ] useSessionStorageState

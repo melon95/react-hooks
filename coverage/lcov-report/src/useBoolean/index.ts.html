@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for dist/src/useUnmount/index.js</title>
+    <title>Code coverage report for src/useBoolean/index.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../prettify.css" />
-    <link rel="stylesheet" href="../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">dist/src/useUnmount</a> index.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/useBoolean</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.57% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/19</span>
+                <span class='fraction'>14/28</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.57% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/19</span>
+                <span class='fraction'>14/28</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,11 +82,27 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -101,26 +117,34 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = require("react");
-const utils_1 = require("../utils");
-const useUnmount = (<span class="fstat-no" title="function not covered" >callback) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (utils_1.isDev) {</span>
-<span class="cstat-no" title="statement not covered" >        if (!(0, utils_1.isFunction)(callback)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new Error(`useUnmount callback expected to be a function, but get ${typeof callback}`);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { SetStateAction, useMemo, useState } from "react";
+&nbsp;
+interface BooleanActions {
+  setTrue: () =&gt; void;
+  setFalse: () =&gt; void;
+  toggle: () =&gt; void;
+  set: (value: SetStateAction&lt;boolean&gt;) =&gt; void;
+}
+&nbsp;
+type BooleanReturn = [boolean, BooleanActions]
+&nbsp;
+const useBoolean = <span class="fstat-no" title="function not covered" >(initialValue: boolean = false): BooleanReturn =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  const [value, setValue] = useState&lt;boolean&gt;(initialValue);</span>
+<span class="cstat-no" title="statement not covered" >  const actions = useMemo(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const setFalse = () =&gt; setValue(false);</span>
+<span class="cstat-no" title="statement not covered" >    const setTrue = () =&gt; setValue(true);</span>
+<span class="cstat-no" title="statement not covered" >    const toggle = () =&gt; setValue((val) =&gt; !val)</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >      setTrue,</span>
+<span class="cstat-no" title="statement not covered" >      setFalse,</span>
+<span class="cstat-no" title="statement not covered" >      toggle,</span>
+<span class="cstat-no" title="statement not covered" >      set: setValue</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const callbackRef = (0, react_1.useRef)(callback);</span>
-<span class="cstat-no" title="statement not covered" >    callbackRef.current = callback;</span>
-<span class="cstat-no" title="statement not covered" >    (0, react_1.useEffect)(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            callbackRef.current?.();</span>
-<span class="cstat-no" title="statement not covered" >        };</span>
-<span class="cstat-no" title="statement not covered" >    }, []);</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-exports.default = useUnmount;
-&nbsp;</pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >  }, [])</span>
+<span class="cstat-no" title="statement not covered" >  return [value, actions]</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+export default useBoolean</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -129,14 +153,14 @@ exports.default = useUnmount;
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-04-10T13:26:51.649Z
             </div>
-        <script src="../../../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
