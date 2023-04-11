@@ -20,6 +20,7 @@
     "@babel/preset-typescript": "^7.21.4",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
+    "@types/js-cookie": "^3.0.3",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.33",
     "babel-jest": "^29.5.0",
@@ -32,6 +33,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "js-cookie": "^3.0.1",
     "query-string": "^8.1.0"
   }
 }

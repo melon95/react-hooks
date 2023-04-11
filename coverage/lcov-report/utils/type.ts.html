@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">69.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>9/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -76,32 +76,32 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const isFunction = (value: any): value is Function =&gt; typeof value === 'function'
 &nbsp;
-export const isArray = <span class="fstat-no" title="function not covered" >(value: any): value is Array&lt;any&gt; =&gt; Array.isArray(value)</span>
+export const isArray = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is Array&lt;any&gt; =&gt; <span class="cstat-no" title="statement not covered" >Array.isArray(value)</span>
 &nbsp;
 const toString = Object.prototype.toString
 &nbsp;
-export const isObject = <span class="fstat-no" title="function not covered" >(value: any): value is Object =&gt; toString.call(value) === '[object Object]'</span>
+export const isObject = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is Object =&gt; <span class="cstat-no" title="statement not covered" >toString.call(value) === '[object Object]'</span>
 &nbsp;
-export const isString = <span class="fstat-no" title="function not covered" >(value: any): value is string =&gt; typeof value === 'string'</span>
+export const isString = (value: any): value is string =&gt; typeof value === 'string'
 &nbsp;
-export const isBoolean = <span class="fstat-no" title="function not covered" >(value: any): value is boolean =&gt; typeof value === 'boolean'</span>
+export const isBoolean = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is boolean =&gt; <span class="cstat-no" title="statement not covered" >typeof value === 'boolean'</span>
 &nbsp;
-export const isNumber = <span class="fstat-no" title="function not covered" >(value: any): value is number =&gt; typeof value === 'number'</span>
+export const isNumber = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is number =&gt; <span class="cstat-no" title="statement not covered" >typeof value === 'number'</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -109,7 +109,7 @@ export const isNumber = <span class="fstat-no" title="function not covered" >(va
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-10T12:32:51.352Z
+                at 2023-04-11T13:22:08.187Z
             </div>
         <script src="../prettify.js"></script>
         <script>
