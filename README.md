@@ -31,9 +31,9 @@
 - [x] useBoolean
 - [x] useToggle
 - [x] useUrlState
-- [ ] useCookieState
-- [ ] useLocalStorageState
-- [ ] useSessionStorageState
+- [x] useCookieState
+- [x] useLocalStorageState
+- [x] useSessionStorageState
 - [ ] useDebounce
 - [ ] useThrottle
 - [ ] useMap
