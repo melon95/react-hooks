@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for createStorageState/index.ts</title>
+    <title>Code coverage report for useDebounce/index.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">createStorageState</a> index.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">useDebounce</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/11</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -91,15 +91,7 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,69 +101,53 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SetStateAction, useCallback, useState } from 'react'
-import { isFunction } from '../utils'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { debounce } from 'lodash-es'
+import { useCallback, useEffect, useState } from 'react'
 &nbsp;
-interface Options&lt;T&gt; {
-  defaultValue?: T | (() =&gt; T)
-  serialize?: (value: T) =&gt; string
-  deserialize?: (value: string) =&gt; T
+interface Options {
+  wait?: number
+  leading?: boolean
+  trailing?: boolean
+  maxWait?: number
+&nbsp;
 }
 &nbsp;
+const useDebounce = &lt;T&gt;(value: T, options: Options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt; { 
+  const { wait = <span class="branch-0 cbranch-no" title="branch not covered" >1000,</span> leading = false, trailing = true, maxWait = Number.MAX_SAFE_INTEGER } = options
+  const [debounceValue, setDebounceValue] = useState&lt;T&gt;(value)
 &nbsp;
-const createStorageState = (storage: Storage) =&gt; {
-  return &lt;T&gt;(key: string, options: Options&lt;T&gt; = {}): [T, (newValue?: SetStateAction&lt;T&gt;) =&gt; void] =&gt; {
-    const { defaultValue, serialize = JSON.stringify, deserialize = JSON.parse } = options
-  
-    const [state, setState] = useState&lt;T&gt;(() =&gt; {
-      const valueInLocalStorage = storage.getItem(key)
-      if (valueInLocalStorage !== null) {
-        return deserialize(valueInLocalStorage)
-      }
-      return isFunction(defaultValue) ? <span class="branch-0 cbranch-no" title="branch not covered" >defaultValue() </span>: defaultValue
-    })
-  
-    const updateState = useCallback((value?: SetStateAction&lt;T&gt;) =&gt; {
-      const result = isFunction(value) ? <span class="branch-0 cbranch-no" title="branch not covered" >value(state) </span>: value
-      setState(result!)
-      if (result === undefined) {
-        storage.removeItem(key)
-      } else {
-        storage.setItem(key, serialize(result))
-      }
-    }, [key, serialize, state])
-      
-    return [state, updateState]
-  }
+  const debounceCallback = useCallback(debounce((val: T) =&gt; setDebounceValue(val), wait, {
+    leading,
+    trailing,
+    maxWait
+  }), [])
+&nbsp;
+  useEffect(() =&gt; {
+    debounceCallback(value)
+  }, [value])
+&nbsp;
+  return debounceValue
 }
 &nbsp;
-export default createStorageState</pre></td></tr></table></pre>
+export default useDebounce</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681304804181" clover="3.2.0">
-  <project timestamp="1681304804181" name="All files">
-    <metrics statements="94" coveredstatements="90" conditionals="41" coveredconditionals="29" methods="41" coveredmethods="37" elements="176" coveredelements="156" complexity="0" loc="94" ncloc="94" packages="12" files="14" classes="14"/>
+<coverage generated="1681560787256" clover="3.2.0">
+  <project timestamp="1681560787256" name="All files">
+    <metrics statements="109" coveredstatements="105" conditionals="50" coveredconditionals="34" methods="49" coveredmethods="45" elements="208" coveredelements="184" complexity="0" loc="109" ncloc="109" packages="14" files="17" classes="17"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -57,6 +57,19 @@
         <line num="37" count="13" type="stmt"/>
       </file>
     </package>
+    <package name="useDebounce">
+      <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useDebounce/index.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="5" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="12" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="13" count="6" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+      </file>
+    </package>
     <package name="useLocalStorageState">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useLocalStorageState/index.ts">
@@ -91,6 +104,19 @@
         <line num="10" count="7" type="stmt"/>
         <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="14" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="useThrottle">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useThrottle/index.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="10" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="11" count="19" type="cond" truecount="2" falsecount="1"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="15" count="19" type="stmt"/>
+        <line num="20" count="19" type="stmt"/>
+        <line num="21" count="16" type="stmt"/>
+        <line num="24" count="19" type="stmt"/>
       </file>
     </package>
     <package name="useToggle">
@@ -155,13 +181,17 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
       <file name="env.ts" path="/Users/melon95/repository/react-hooks/src/utils/env.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="8" type="stmt"/>
       </file>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/utils/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="tools.ts" path="/Users/melon95/repository/react-hooks/src/utils/tools.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="17" type="stmt"/>
       </file>
       <file name="type.ts" path="/Users/melon95/repository/react-hooks/src/utils/type.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>

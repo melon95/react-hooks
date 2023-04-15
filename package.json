@@ -33,7 +33,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.7",
     "js-cookie": "^3.0.1",
+    "lodash-es": "^4.17.21",
     "query-string": "^8.1.0"
   }
 }

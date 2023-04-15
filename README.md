@@ -34,8 +34,8 @@
 - [x] useCookieState
 - [x] useLocalStorageState
 - [x] useSessionStorageState
-- [ ] useDebounce
-- [ ] useThrottle
+- [x] useDebounce
+- [x] useThrottle
 - [ ] useMap
 - [ ] useSet
 - [ ] usePrevious

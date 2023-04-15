@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for createStorageState/index.ts</title>
+    <title>Code coverage report for index.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">createStorageState</a> index.ts</h1>
+        <h1><a href="index.html">All files</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/11</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -98,12 +98,23 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,83 +122,69 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SetStateAction, useCallback, useState } from 'react'
-import { isFunction } from '../utils'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { throttle } from 'lodash-es'
+import { useEffect, useMemo, useState } from 'react'
 &nbsp;
-interface Options&lt;T&gt; {
-  defaultValue?: T | (() =&gt; T)
-  serialize?: (value: T) =&gt; string
-  deserialize?: (value: string) =&gt; T
+interface Options {
+  wait?: number
+  leading?: boolean
+  trailing?: boolean
 }
 &nbsp;
+const useThrottle = &lt;T&gt;(value: T, options: Options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt; {
+  const { wait = <span class="branch-0 cbranch-no" title="branch not covered" >1000,</span> leading = true, trailing = false } = options
 &nbsp;
-const createStorageState = (storage: Storage) =&gt; {
-  return &lt;T&gt;(key: string, options: Options&lt;T&gt; = {}): [T, (newValue?: SetStateAction&lt;T&gt;) =&gt; void] =&gt; {
-    const { defaultValue, serialize = JSON.stringify, deserialize = JSON.parse } = options
-  
-    const [state, setState] = useState&lt;T&gt;(() =&gt; {
-      const valueInLocalStorage = storage.getItem(key)
-      if (valueInLocalStorage !== null) {
-        return deserialize(valueInLocalStorage)
-      }
-      return isFunction(defaultValue) ? <span class="branch-0 cbranch-no" title="branch not covered" >defaultValue() </span>: defaultValue
-    })
-  
-    const updateState = useCallback((value?: SetStateAction&lt;T&gt;) =&gt; {
-      const result = isFunction(value) ? <span class="branch-0 cbranch-no" title="branch not covered" >value(state) </span>: value
-      setState(result!)
-      if (result === undefined) {
-        storage.removeItem(key)
-      } else {
-        storage.setItem(key, serialize(result))
-      }
-    }, [key, serialize, state])
-      
-    return [state, updateState]
-  }
+  const [throttleValue, setThrottleValue] = useState&lt;T&gt;(value)
+&nbsp;
+  const throttleCallback = useMemo(() =&gt; throttle((val: T) =&gt; {
+    console.log('throttleCallback', val)
+    setThrottleValue(val)
+  }, wait, {
+    leading,
+    trailing
+  }), [])
+&nbsp;
+  useEffect(() =&gt; {
+    console.log('value changed', value)
+    throttleCallback(value)
+  }, [value])
+&nbsp;
+  useEffect(() =&gt; {
+    console.log('throttleValue', throttleValue)
+  }, [throttleValue])
+&nbsp;
+  return throttleValue
+&nbsp;
 }
 &nbsp;
-export default createStorageState</pre></td></tr></table></pre>
+export default useThrottle</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-15T12:13:07.241Z
+                at 2023-04-15T12:04:39.244Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
     </body>
 </html>
     

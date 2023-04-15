@@ -14,5 +14,6 @@
   },
   "prettier.jsxSingleQuote": false,
   "prettier.singleQuote": true,
-  "prettier.useTabs": true
+  "prettier.useTabs": true,
+  "prettier.printWidth": 80
 }
