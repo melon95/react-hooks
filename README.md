@@ -36,8 +36,8 @@
 - [x] useSessionStorageState
 - [x] useDebounce
 - [x] useThrottle
-- [ ] useMap
-- [ ] useSet
+- [x] useMap
+- [x] useSet
 - [ ] usePrevious
 - [ ] useRafState
 - [ ] useSafeState

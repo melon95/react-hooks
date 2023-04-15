@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for useCookieState/index.ts</title>
+    <title>Code coverage report for useMap/index.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">useCookieState</a> index.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">useMap</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/16</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -99,11 +99,7 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,71 +112,66 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Cookies, { CookieAttributes } from 'js-cookie'
-import { SetStateAction, useCallback, useState } from 'react'
-import { isFunction, isString } from '../utils'
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMemo, useState } from 'react'
 &nbsp;
-interface Options extends CookieAttributes {
-  defaultValue?: string | (() =&gt; string)
+type InitialValue&lt;K, V&gt; = Iterable&lt;[K, V]&gt;
+&nbsp;
+interface Actions&lt;K, V&gt; {
+  set: (key: K, value: V) =&gt; void
+  remove: (key: K) =&gt; void
+  reset: () =&gt; void
+  setAll: (newMap?: InitialValue&lt;K, V&gt;) =&gt; void
+  get: (key: K) =&gt; V | undefined
 }
 &nbsp;
-interface SetState {
-  (value: SetStateAction&lt;string | undefined&gt;, options?: Options): void
-}
+const useMap = &lt;K, V&gt;(initialValue?: InitialValue&lt;K, V&gt;): [Map&lt;K, V&gt;, Actions&lt;K, V&gt;] =&gt; {
+  const [map, setMap] = useState(new Map&lt;K, V&gt;(initialValue))
+  
+  const actions: Actions&lt;K, V&gt; = useMemo(() =&gt; {
+    const set = (key: K, value: V) =&gt; setMap((preMap) =&gt; new Map(preMap.set(key, value)))
 &nbsp;
+    const remove = (key: K) =&gt;   setMap((preMap) =&gt; {
+      const newMap = new Map(preMap)
+      newMap.delete(key)
+      return newMap
+    })
 &nbsp;
-const useCookieState = (key: string, options: Options = {}): [string | undefined, SetState] =&gt; {
-  const [cookieState, setCookieState] = useState(() =&gt; {
-    const result = Cookies.get(key)
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (isString(result)) <span class="cstat-no" title="statement not covered" >return result</span>
+    const reset = () =&gt; setMap(new Map(initialValue))
 &nbsp;
-    if (isFunction(options.defaultValue)) return options.defaultValue()
+    const setAll = (newMap?: InitialValue&lt;K, V&gt;) =&gt; setMap(new Map(newMap))
+&nbsp;
+    const get = (key: K) =&gt; map.get(key)
     
-    return options.defaultValue
-  })
+    return { set, remove, reset, get, setAll }
+  }, [map])
 &nbsp;
-  const updateCookieState = useCallback((value: SetStateAction&lt;string | undefined&gt;, newOptions: Options = {}) =&gt; {
-    const result = isFunction(value) ? <span class="branch-0 cbranch-no" title="branch not covered" >value(cookieState!) </span>: value
-&nbsp;
-    setCookieState(result)
-    
-    const { defaultValue, ...restOptions  } = {  ...options, ...newOptions }
-    if (result === undefined) {
-      Cookies.remove(key)
-    } else {
-      Cookies.set(key, result, restOptions)
-    }
-  }, [key, options, cookieState])
-&nbsp;
-  return [cookieState, updateCookieState]
+  return [map, actions]
 }
 &nbsp;
-export default useCookieState</pre></td></tr></table></pre>
+export default useMap</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
