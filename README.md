@@ -39,7 +39,7 @@
 - [x] useMap
 - [x] useSet
 - [x] usePrevious
-- [ ] useRafState
+- [x] useRafState
 - [ ] useSafeState
 - [ ] useGetState
 - [ ] useResetState
