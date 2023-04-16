@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681618636741" clover="3.2.0">
-  <project timestamp="1681618636741" name="All files">
-    <metrics statements="172" coveredstatements="162" conditionals="66" coveredconditionals="45" methods="77" coveredmethods="72" elements="315" coveredelements="279" complexity="0" loc="172" ncloc="172" packages="19" files="22" classes="22"/>
+<coverage generated="1681642791070" clover="3.2.0">
+  <project timestamp="1681642791070" name="All files">
+    <metrics statements="178" coveredstatements="168" conditionals="66" coveredconditionals="45" methods="79" coveredmethods="74" elements="323" coveredelements="287" complexity="0" loc="178" ncloc="178" packages="20" files="23" classes="23"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -68,6 +68,18 @@
         <line num="22" count="6" type="stmt"/>
         <line num="23" count="5" type="stmt"/>
         <line num="26" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="useGetState">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useGetState/index.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
       </file>
     </package>
     <package name="useLocalStorageState">

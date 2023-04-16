@@ -41,7 +41,7 @@
 - [x] usePrevious
 - [x] useRafState
 - [x] useSafeState
-- [ ] useGetState
+- [x] useGetState
 - [ ] useResetState
 
 ### Effect
