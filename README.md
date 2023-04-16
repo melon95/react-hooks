@@ -38,7 +38,7 @@
 - [x] useThrottle
 - [x] useMap
 - [x] useSet
-- [ ] usePrevious
+- [x] usePrevious
 - [ ] useRafState
 - [ ] useSafeState
 - [ ] useGetState
