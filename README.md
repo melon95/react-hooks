@@ -40,7 +40,7 @@
 - [x] useSet
 - [x] usePrevious
 - [x] useRafState
-- [ ] useSafeState
+- [x] useSafeState
 - [ ] useGetState
 - [ ] useResetState
 

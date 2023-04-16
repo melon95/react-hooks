@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils/type.ts</title>
+    <title>Code coverage report for useSafeState/index.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> type.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">useSafeState</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/13</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -76,33 +76,54 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">26x</span>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const isFunction = (value: any): value is Function =&gt; typeof value === 'function'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Dispatch, SetStateAction, useRef, useState } from "react"
+import useUnmount from "../useUnmount"
 &nbsp;
-export const isArray = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is Array&lt;any&gt; =&gt; <span class="cstat-no" title="statement not covered" >Array.isArray(value)</span>
+const useSafeStage = &lt;T&gt;(initialValue: T): [T, Dispatch&lt;SetStateAction&lt;T&gt;&gt;] =&gt; {
+  const [state, setState] = useState&lt;T&gt;(initialValue)
 &nbsp;
-const toString = Object.prototype.toString
+  const destroyRef = useRef(false)
+  useUnmount(() =&gt; {
+    destroyRef.current = true
+  })
 &nbsp;
-export const isObject = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is Object =&gt; <span class="cstat-no" title="statement not covered" >toString.call(value) === '[object Object]'</span>
+  const updateState = (value: SetStateAction&lt;T&gt;) =&gt; {
+    if (!destroyRef.current) {
+      setState(value)
+    }
+  }
 &nbsp;
-export const isString = (value: any): value is string =&gt; typeof value === 'string'
+  return [state, updateState]
+}
 &nbsp;
-export const isBoolean = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is boolean =&gt; <span class="cstat-no" title="statement not covered" >typeof value === 'boolean'</span>
-&nbsp;
-export const isNumber = <span class="fstat-no" title="function not covered" >(v</span>alue: any): value is number =&gt; <span class="cstat-no" title="statement not covered" >typeof value === 'number'</span>
-&nbsp;</pre></td></tr></table></pre>
+export default useSafeStage </pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
