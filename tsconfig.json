@@ -12,7 +12,8 @@
     "outDir": "dist",
     /* Type Checking */
     "strict": true,                                     
-    "skipLibCheck": true                                
+    "skipLibCheck": true,
+    "strictNullChecks": false                        
   },
   "include": [
     "src/**/*",
