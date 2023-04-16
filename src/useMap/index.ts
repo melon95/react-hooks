@@ -1,37 +1,41 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState } from "react";
 
-type InitialValue<K, V> = Iterable<[K, V]>
+type InitialValue<K, V> = Iterable<[K, V]>;
 
 interface Actions<K, V> {
-  set: (key: K, value: V) => void
-  remove: (key: K) => void
-  reset: () => void
-  setAll: (newMap?: InitialValue<K, V>) => void
-  get: (key: K) => V | undefined
+	set: (key: K, value: V) => void;
+	remove: (key: K) => void;
+	reset: () => void;
+	setAll: (newMap?: InitialValue<K, V>) => void;
+	get: (key: K) => V | undefined;
 }
 
-const useMap = <K, V>(initialValue?: InitialValue<K, V>): [Map<K, V>, Actions<K, V>] => {
-  const [map, setMap] = useState(new Map<K, V>(initialValue))
-  
-  const actions: Actions<K, V> = useMemo(() => {
-    const set = (key: K, value: V) => setMap((preMap) => new Map(preMap.set(key, value)))
+const useMap = <K, V>(
+	initialValue?: InitialValue<K, V>,
+): [Map<K, V>, Actions<K, V>] => {
+	const [map, setMap] = useState(new Map<K, V>(initialValue));
 
-    const remove = (key: K) =>   setMap((preMap) => {
-      const newMap = new Map(preMap)
-      newMap.delete(key)
-      return newMap
-    })
+	const actions: Actions<K, V> = useMemo(() => {
+		const set = (key: K, value: V) =>
+			setMap((preMap) => new Map(preMap.set(key, value)));
 
-    const reset = () => setMap(new Map(initialValue))
+		const remove = (key: K) =>
+			setMap((preMap) => {
+				const newMap = new Map(preMap);
+				newMap.delete(key);
+				return newMap;
+			});
 
-    const setAll = (newMap?: InitialValue<K, V>) => setMap(new Map(newMap))
+		const reset = () => setMap(new Map(initialValue));
 
-    const get = (key: K) => map.get(key)
-    
-    return { set, remove, reset, get, setAll }
-  }, [map])
+		const setAll = (newMap?: InitialValue<K, V>) => setMap(new Map(newMap));
 
-  return [map, actions]
-}
+		const get = (key: K) => map.get(key);
 
-export default useMap
+		return { set, remove, reset, get, setAll };
+	}, [map]);
+
+	return [map, actions];
+};
+
+export default useMap;

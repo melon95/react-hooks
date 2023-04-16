@@ -1,5 +1,5 @@
-import createStorageState from '../createStorageState'
+import createStorageState from "../createStorageState";
 
-const useSessionStorageState = createStorageState(sessionStorage)
+const useSessionStorageState = createStorageState(sessionStorage);
 
-export default useSessionStorageState
+export default useSessionStorageState;

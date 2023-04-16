@@ -1,5 +1,5 @@
-import createStorageState from '../createStorageState'
+import createStorageState from "../createStorageState";
 
-const useLocalStorageState = createStorageState(localStorage)
+const useLocalStorageState = createStorageState(localStorage);
 
-export default useLocalStorageState
+export default useLocalStorageState;

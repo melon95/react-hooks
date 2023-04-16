@@ -1,13 +1,13 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState } from "react";
 
 const useResetState = <T>(initialValue: T) => {
-  const [value, setValue] = useState<T>(initialValue)
+	const [value, setValue] = useState<T>(initialValue);
 
-  const reset = useCallback(() => {
-    setValue(initialValue)
-  }, [initialValue])
+	const reset = useCallback(() => {
+		setValue(initialValue);
+	}, [initialValue]);
 
-  return [value, setValue, reset] as const
-}
+	return [value, setValue, reset] as const;
+};
 
-export default useResetState
+export default useResetState;

@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -99,7 +99,12 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,15 +117,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
@@ -135,50 +144,56 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMemo, useState } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMemo, useState } from "react";
 &nbsp;
-type InitialValue&lt;K, V&gt; = Iterable&lt;[K, V]&gt;
+type InitialValue&lt;K, V&gt; = Iterable&lt;[K, V]&gt;;
 &nbsp;
 interface Actions&lt;K, V&gt; {
-  set: (key: K, value: V) =&gt; void
-  remove: (key: K) =&gt; void
-  reset: () =&gt; void
-  setAll: (newMap?: InitialValue&lt;K, V&gt;) =&gt; void
-  get: (key: K) =&gt; V | undefined
+	set: (key: K, value: V) =&gt; void;
+	remove: (key: K) =&gt; void;
+	reset: () =&gt; void;
+	setAll: (newMap?: InitialValue&lt;K, V&gt;) =&gt; void;
+	get: (key: K) =&gt; V | undefined;
 }
 &nbsp;
-const useMap = &lt;K, V&gt;(initialValue?: InitialValue&lt;K, V&gt;): [Map&lt;K, V&gt;, Actions&lt;K, V&gt;] =&gt; {
-  const [map, setMap] = useState(new Map&lt;K, V&gt;(initialValue))
-  
-  const actions: Actions&lt;K, V&gt; = useMemo(() =&gt; {
-    const set = (key: K, value: V) =&gt; setMap((preMap) =&gt; new Map(preMap.set(key, value)))
+const useMap = &lt;K, V&gt;(
+	initialValue?: InitialValue&lt;K, V&gt;,
+): [Map&lt;K, V&gt;, Actions&lt;K, V&gt;] =&gt; {
+	const [map, setMap] = useState(new Map&lt;K, V&gt;(initialValue));
 &nbsp;
-    const remove = (key: K) =&gt;   setMap((preMap) =&gt; {
-      const newMap = new Map(preMap)
-      newMap.delete(key)
-      return newMap
-    })
+	const actions: Actions&lt;K, V&gt; = useMemo(() =&gt; {
+		const set = (key: K, value: V) =&gt;
+			setMap((preMap) =&gt; new Map(preMap.set(key, value)));
 &nbsp;
-    const reset = () =&gt; setMap(new Map(initialValue))
+		const remove = (key: K) =&gt;
+			setMap((preMap) =&gt; {
+				const newMap = new Map(preMap);
+				newMap.delete(key);
+				return newMap;
+			});
 &nbsp;
-    const setAll = (newMap?: InitialValue&lt;K, V&gt;) =&gt; setMap(new Map(newMap))
+		const reset = () =&gt; setMap(new Map(initialValue));
 &nbsp;
-    const get = (key: K) =&gt; map.get(key)
-    
-    return { set, remove, reset, get, setAll }
-  }, [map])
+		const setAll = (newMap?: InitialValue&lt;K, V&gt;) =&gt; setMap(new Map(newMap));
 &nbsp;
-  return [map, actions]
-}
+		const get = (key: K) =&gt; map.get(key);
 &nbsp;
-export default useMap</pre></td></tr></table></pre>
+		return { set, remove, reset, get, setAll };
+	}, [map]);
+&nbsp;
+	return [map, actions];
+};
+&nbsp;
+export default useMap;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-16T11:16:30.684Z
+                at 2023-04-16T11:37:04.144Z
             </div>
         <script src="../prettify.js"></script>
         <script>

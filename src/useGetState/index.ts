@@ -1,14 +1,14 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from "react";
 
 const useGetState = <T>(initialValue: T) => {
-  const [state, setState] = useState<T>(initialValue);
-  
-  const stateRef = useRef<T>(state)
-  stateRef.current = state
+	const [state, setState] = useState<T>(initialValue);
 
-  const getState = useCallback(() => stateRef.current, []);
+	const stateRef = useRef<T>(state);
+	stateRef.current = state;
 
-  return [state, setState, getState] as const;
-}
+	const getState = useCallback(() => stateRef.current, []);
 
-export default useGetState
+	return [state, setState, getState] as const;
+};
+
+export default useGetState;

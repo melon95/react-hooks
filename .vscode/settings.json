@@ -1,19 +1,19 @@
 {
-  "standard.autoFixOnSave": true,
-  "standard.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "prettier.semi": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true,
-    "source.fixAll.eslint": true
-  },
-  "prettier.jsxSingleQuote": false,
-  "prettier.singleQuote": true,
-  "prettier.useTabs": true,
-  "prettier.printWidth": 80
+	"standard.autoFixOnSave": true,
+	"standard.validate": [
+		"javascript", "javascriptreact", "typescript", "typescriptreact"
+	],
+	"prettier.semi": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.organizeImports": true,
+		"source.fixAll.eslint": true
+	},
+	"prettier.jsxSingleQuote": false,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"prettier.printWidth": 80,
+	"rome.requireConfiguration": true,
+	"windicss.sortOnSave": true,
+	"editor.formatOnSave": true
 }
