@@ -42,7 +42,7 @@
 - [x] useRafState
 - [x] useSafeState
 - [x] useGetState
-- [ ] useResetState
+- [x] useResetState
 
 ### Effect
 - [ ] useUpdateEffect
