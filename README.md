@@ -45,8 +45,8 @@
 - [x] useResetState
 
 ### Effect
-- [ ] useUpdateEffect
-- [ ] useUpdateLayoutEffect
+- [x] useUpdateEffect
+- [x] useUpdateLayoutEffect
 - [ ] useAsyncEffect
 - [ ] useDebounceEffect
 - [ ] useDebounceFn

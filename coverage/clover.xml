@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681907270808" clover="3.2.0">
-  <project timestamp="1681907270808" name="All files">
-    <metrics statements="205" coveredstatements="191" conditionals="68" coveredconditionals="47" methods="84" coveredmethods="79" elements="357" coveredelements="317" complexity="0" loc="205" ncloc="205" packages="22" files="25" classes="25"/>
+<coverage generated="1681907591458" clover="3.2.0">
+  <project timestamp="1681907591459" name="All files">
+    <metrics statements="211" coveredstatements="197" conditionals="70" coveredconditionals="49" methods="86" coveredmethods="81" elements="367" coveredelements="327" complexity="0" loc="211" ncloc="211" packages="23" files="26" classes="26"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -294,6 +294,18 @@
         <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="13" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="useUpdateLayoutEffect">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useUpdateLayoutEffect/index.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
     </package>
     <package name="useUrlState">
