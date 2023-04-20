@@ -47,7 +47,7 @@
 ### Effect
 - [x] useUpdateEffect
 - [x] useUpdateLayoutEffect
-- [ ] useAsyncEffect
+- [x] useAsyncEffect
 - [ ] useDebounceEffect
 - [ ] useDebounceFn
 - [ ] useThrottleFn

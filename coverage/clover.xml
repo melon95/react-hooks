@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681907591458" clover="3.2.0">
-  <project timestamp="1681907591459" name="All files">
-    <metrics statements="211" coveredstatements="197" conditionals="70" coveredconditionals="49" methods="86" coveredmethods="81" elements="367" coveredelements="327" complexity="0" loc="211" ncloc="211" packages="23" files="26" classes="26"/>
+<coverage generated="1681993221788" clover="3.2.0">
+  <project timestamp="1681993221788" name="All files">
+    <metrics statements="223" coveredstatements="209" conditionals="74" coveredconditionals="53" methods="90" coveredmethods="85" elements="387" coveredelements="347" complexity="0" loc="223" ncloc="223" packages="24" files="27" classes="27"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -21,6 +21,24 @@
         <line num="34" count="2" type="stmt"/>
         <line num="36" count="5" type="stmt"/>
         <line num="42" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="useAsyncEffect">
+      <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useAsyncEffect/index.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
       </file>
     </package>
     <package name="useBoolean">
@@ -340,8 +358,8 @@
       </file>
       <file name="tools.ts" path="/Users/melon95/repository/react-hooks/src/utils/tools.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="17" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="27" type="stmt"/>
       </file>
       <file name="type.ts" path="/Users/melon95/repository/react-hooks/src/utils/type.ts">
         <metrics statements="13" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
