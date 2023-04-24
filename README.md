@@ -48,8 +48,8 @@
 - [x] useUpdateEffect
 - [x] useUpdateLayoutEffect
 - [x] useAsyncEffect
-- [ ] useDebounceEffect
-- [ ] useDebounceFn
+- [x] useDebounceEffect
+- [x] useDebounceFn
 - [ ] useThrottleFn
 - [ ] useThrottleEffect
 - [ ] useDeepCompareEffect
