@@ -1,7 +1,7 @@
 import { DebounceSettings } from 'lodash-es'
 import { DependencyList, EffectCallback, useEffect, useState } from 'react'
-import useUpdateEffect from '../../useUpdateEffect'
 import useDebounceFn from '../useDebounceFn'
+import useUpdateEffect from '../useUpdateEffect'
 interface UseDebounceEffectOptions extends DebounceSettings {
   wait?: number
 }

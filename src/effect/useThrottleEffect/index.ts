@@ -1,6 +1,6 @@
 import { DependencyList, EffectCallback, useEffect, useState } from "react"
-import useUpdateEffect from "../../useUpdateEffect"
 import useThrottleFn from "../useThrottleFn"
+import useUpdateEffect from "../useUpdateEffect"
 
 
 const useThrottleEffect = (effect: EffectCallback, deps?: DependencyList, options?: UseThrottleFnOptions) => {
