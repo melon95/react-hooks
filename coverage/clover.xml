@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682421661073" clover="3.2.0">
-  <project timestamp="1682421661073" name="All files">
-    <metrics statements="238" coveredstatements="224" conditionals="83" coveredconditionals="57" methods="95" coveredmethods="90" elements="416" coveredelements="371" complexity="0" loc="238" ncloc="238" packages="27" files="30" classes="30"/>
+<coverage generated="1682422925370" clover="3.2.0">
+  <project timestamp="1682422925370" name="All files">
+    <metrics statements="245" coveredstatements="231" conditionals="83" coveredconditionals="57" methods="98" coveredmethods="93" elements="426" coveredelements="381" complexity="0" loc="245" ncloc="245" packages="28" files="31" classes="31"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -46,14 +46,27 @@
         <line num="26" count="12" type="stmt"/>
       </file>
     </package>
+    <package name="effect.useThrottleEffect">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/effect/useThrottleEffect/index.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+      </file>
+    </package>
     <package name="effect.useThrottleFn">
       <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/effect/useThrottleFn/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="15" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="16" count="1" type="cond" truecount="2" falsecount="1"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="16" count="9" type="cond" truecount="2" falsecount="1"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="18" count="9" type="stmt"/>
       </file>
     </package>
     <package name="useAsyncEffect">
@@ -311,15 +324,15 @@
       <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useUnmount/index.ts">
         <metrics statements="9" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="3"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="26" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="34" type="cond" truecount="1" falsecount="1"/>
         <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="12" count="26" type="stmt"/>
-        <line num="13" count="26" type="stmt"/>
-        <line num="14" count="26" type="stmt"/>
-        <line num="15" count="10" type="stmt"/>
-        <line num="16" count="10" type="stmt"/>
+        <line num="12" count="34" type="stmt"/>
+        <line num="13" count="34" type="stmt"/>
+        <line num="14" count="34" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
       </file>
     </package>
     <package name="useUnmountedRef">
@@ -337,14 +350,14 @@
       <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useUpdateEffect/index.ts">
         <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="16" type="stmt"/>
-        <line num="7" count="16" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="11" count="16" type="stmt"/>
-        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="24" type="stmt"/>
+        <line num="7" count="24" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="11" count="24" type="stmt"/>
+        <line num="12" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
       </file>
     </package>
     <package name="useUpdateLayoutEffect">
@@ -384,30 +397,30 @@
       <metrics statements="16" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
       <file name="env.ts" path="/Users/melon95/repository/react-hooks/src/utils/env.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="12" type="stmt"/>
+        <line num="1" count="13" type="stmt"/>
       </file>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/utils/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="tools.ts" path="/Users/melon95/repository/react-hooks/src/utils/tools.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="42" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="47" type="stmt"/>
       </file>
       <file name="type.ts" path="/Users/melon95/repository/react-hooks/src/utils/type.ts">
         <metrics statements="13" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
-        <line num="1" count="12" type="stmt"/>
+        <line num="1" count="13" type="stmt"/>
         <line num="2" count="26" type="stmt"/>
-        <line num="4" count="12" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="7" count="12" type="stmt"/>
-        <line num="9" count="12" type="stmt"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="12" count="12" type="stmt"/>
+        <line num="12" count="13" type="stmt"/>
         <line num="13" count="5" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
+        <line num="18" count="13" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
       </file>
     </package>

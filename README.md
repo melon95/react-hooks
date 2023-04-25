@@ -51,7 +51,7 @@
 - [x] useDebounceEffect
 - [x] useDebounceFn
 - [x] useThrottleFn
-- [ ] useThrottleEffect
+- [x] useThrottleEffect
 - [ ] useDeepCompareEffect
 - [ ] useDeepCompareLayoutEffect
 - [ ] useInterval

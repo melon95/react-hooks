@@ -2,7 +2,7 @@ import { DebouncedFunc, throttle, ThrottleSettings } from "lodash-es"
 import { useCallback } from "react"
 
 export type  noop = (...args: any[]) => any
-export interface useThrottleFnOptions extends ThrottleSettings {
+export interface UseThrottleFnOptions extends ThrottleSettings {
   wait?: number
 }
 
@@ -12,7 +12,7 @@ export interface useThrottleFnReturn<T extends noop> {
   flush: DebouncedFunc<T>['flush']
 }
 
-const useThrottleFn = <T extends noop>(fn: T, options: useThrottleFnOptions = {}): useThrottleFnReturn<T> => {
+const useThrottleFn = <T extends noop>(fn: T, options: UseThrottleFnOptions = {}): useThrottleFnReturn<T> => {
   const { wait = 1000, leading = true, trailing = true } = options
   const throttledFn = useCallback(throttle(fn, wait, { leading, trailing }), [])
   return {
