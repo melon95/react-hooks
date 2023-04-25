@@ -50,7 +50,7 @@
 - [x] useAsyncEffect
 - [x] useDebounceEffect
 - [x] useDebounceFn
-- [ ] useThrottleFn
+- [x] useThrottleFn
 - [ ] useThrottleEffect
 - [ ] useDeepCompareEffect
 - [ ] useDeepCompareLayoutEffect

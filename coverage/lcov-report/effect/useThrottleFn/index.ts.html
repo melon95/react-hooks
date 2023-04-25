@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for useSet/index.ts</title>
+    <title>Code coverage report for effect/useThrottleFn/index.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">useSet</a> index.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">effect/useThrottleFn</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -87,18 +87,13 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -107,68 +102,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useMemo, useState } from "react";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DebouncedFunc, throttle, ThrottleSettings } from "lodash-es"
+import { useCallback } from "react"
 &nbsp;
-interface Actions&lt;T&gt; {
-	add: (value: T) =&gt; void;
-	remove: (value: T) =&gt; void;
-	reset: () =&gt; void;
+export type  noop = (...args: any[]) =&gt; any
+export interface useThrottleFnOptions extends ThrottleSettings {
+  wait?: number
 }
 &nbsp;
-const useSet = &lt;T&gt;(initialValue?: Iterable&lt;T&gt;): [Set&lt;T&gt;, Actions&lt;T&gt;] =&gt; {
-	const [set, setSet] = useState(new Set(initialValue));
-	const actions: Actions&lt;T&gt; = useMemo(() =&gt; {
-		const add = (value: T) =&gt; {
-			setSet((preSet) =&gt; {
-				if (preSet.has(value)) return preSet;
-				return new Set(preSet.add(value));
-			});
-		};
+export interface useThrottleFnReturn&lt;T extends noop&gt; {
+  run: DebouncedFunc&lt;T&gt;
+  cancel: DebouncedFunc&lt;T&gt;['cancel']
+  flush: DebouncedFunc&lt;T&gt;['flush']
+}
 &nbsp;
-		const remove = (value: T) =&gt;
-			setSet((preSet) =&gt; {
-				if (!preSet.has(value)) return preSet;
-				const newSet = new Set(preSet);
-				newSet.delete(value);
-				return newSet;
-			});
+const useThrottleFn = &lt;T extends noop&gt;(fn: T, options: useThrottleFnOptions = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span>: useThrottleFnReturn&lt;T&gt; =&gt; {
+  const { wait = <span class="branch-0 cbranch-no" title="branch not covered" >1000,</span> leading = true, trailing = true } = options
+  const throttledFn = useCallback(throttle(fn, wait, { leading, trailing }), [])
+  return {
+    run: throttledFn,
+    cancel: throttledFn.cancel,
+    flush: throttledFn.flush,
+  }
+}
 &nbsp;
-		const reset = () =&gt; setSet(new Set(initialValue));
-&nbsp;
-		return { add, remove, reset };
-	}, []);
-&nbsp;
-	return [set, actions];
-};
-&nbsp;
-export default useSet;
-&nbsp;</pre></td></tr></table></pre>
+export default useThrottleFn</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -177,14 +144,14 @@ export default useSet;
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-04-25T11:21:01.044Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
