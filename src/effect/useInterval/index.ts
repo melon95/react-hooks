@@ -4,10 +4,14 @@ import { useCallback, useEffect, useRef } from "react";
 type IntervalFn = () => void;
 
 interface Options {
-  immediate?: boolean;
+	immediate?: boolean;
 }
 
-const useInterval = (callback: IntervalFn, delay: number, options: Options = {}) => {
+const useInterval = (
+	callback: IntervalFn,
+	delay: number,
+	options: Options = {},
+) => {
 	const callbackRef = useRef<IntervalFn>(callback);
 	const intervalRef = useRef<NodeJS.Timer>();
 
@@ -16,10 +20,10 @@ const useInterval = (callback: IntervalFn, delay: number, options: Options = {})
 	}, []);
 
 	useEffect(() => {
-    if (!isNumber(delay) || delay <= 0) return
-    if (options.immediate) {
-      callbackRef.current();
-    }
+		if (!isNumber(delay) || delay <= 0) return;
+		if (options.immediate) {
+			callbackRef.current();
+		}
 		intervalRef.current = setInterval(callbackRef.current, delay);
 		return clear;
 	}, [delay]);

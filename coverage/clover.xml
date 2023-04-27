@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682597494401" clover="3.2.0">
-  <project timestamp="1682597494401" name="All files">
-    <metrics statements="263" coveredstatements="249" conditionals="92" coveredconditionals="66" methods="103" coveredmethods="98" elements="458" coveredelements="413" complexity="0" loc="263" ncloc="263" packages="32" files="35" classes="35"/>
+<coverage generated="1682599785165" clover="3.2.0">
+  <project timestamp="1682599785165" name="All files">
+    <metrics statements="273" coveredstatements="259" conditionals="96" coveredconditionals="70" methods="106" coveredmethods="101" elements="475" coveredelements="430" complexity="0" loc="273" ncloc="273" packages="33" files="36" classes="36"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -92,18 +92,18 @@
       <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/effect/useInterval/index.ts">
         <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
-        <line num="10" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="9" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
         <line num="18" count="8" type="stmt"/>
-        <line num="19" count="8" type="cond" truecount="4" falsecount="0"/>
-        <line num="20" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
+        <line num="22" count="8" type="stmt"/>
+        <line num="23" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="24" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="31" count="8" type="stmt"/>
       </file>
     </package>
     <package name="effect.useThrottleEffect">
@@ -127,6 +127,22 @@
         <line num="19" count="9" type="cond" truecount="2" falsecount="1"/>
         <line num="20" count="9" type="stmt"/>
         <line num="24" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="effect.useTimeout">
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/effect/useTimeout/index.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
       </file>
     </package>
     <package name="effect.useUpdateEffect">

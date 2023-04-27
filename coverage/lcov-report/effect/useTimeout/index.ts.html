@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for state/useRafState/index.ts</title>
+    <title>Code coverage report for effect/useTimeout/index.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,27 +19,27 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">state/useRafState</a> index.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">effect/useTimeout</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -88,47 +88,47 @@
 <a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Dispatch, SetStateAction, useCallback, useRef, useState } from "react";
-import useUnmount from "../../lifeCycle/useUnmount";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from "lodash-es";
+import { useCallback, useEffect, useRef } from "react";
+type TimeoutFn = () =&gt; void;
 &nbsp;
-const useRafStage = &lt;T&gt;(initialValue: T): [T, Dispatch&lt;SetStateAction&lt;T&gt;&gt;] =&gt; {
-	const [state, setState] = useState&lt;T&gt;(initialValue);
-	const rafRef = useRef(0);
+const useTimeout = (effect: TimeoutFn, delay: number) =&gt; {
+	const effectRef = useRef&lt;TimeoutFn&gt;(effect);
+	const timeoutRef = useRef&lt;NodeJS.Timer&gt;();
 &nbsp;
-	const updateState = useCallback((val: SetStateAction&lt;T&gt;) =&gt; {
-		<span class="missing-if-branch" title="if path not taken" >I</span>if (rafRef.current) <span class="cstat-no" title="statement not covered" >cancelAnimationFrame(rafRef.current);</span>
-		rafRef.current = requestAnimationFrame(() =&gt; {
-			setState(val);
-		});
+	const clear = useCallback(() =&gt; {
+		clearTimeout(timeoutRef.current);
 	}, []);
 &nbsp;
-	useUnmount(() =&gt; {
-		<span class="missing-if-branch" title="if path not taken" >I</span>if (rafRef.current) <span class="cstat-no" title="statement not covered" >cancelAnimationFrame(rafRef.current);</span>
-	});
+	useEffect(() =&gt; {
+		if (!isNumber(delay) || delay &lt;= 0) return;
+		timeoutRef.current = setTimeout(effectRef.current, delay);
+		return clear;
+	}, []);
 &nbsp;
-	return [state, updateState];
+	return clear;
 };
 &nbsp;
-export default useRafStage;
+export default useTimeout;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
