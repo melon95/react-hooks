@@ -25,7 +25,7 @@ const useCookieState = (
 
 	const updateCookieState = useCallback(
 		(value: SetStateAction<string | undefined>, newOptions: Options = {}) => {
-const  result = isFunction(value) ? value(cookieState!) : value;
+			const result = isFunction(value) ? value(cookieState!) : value;
 
 			setCookieState(result);
 

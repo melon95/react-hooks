@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.7% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/17</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/16</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,83 +93,74 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">31x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">31x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useRef, useState } from "react"
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from "lodash-es";
+import { useCallback, useEffect, useRef } from "react";
 &nbsp;
-export type ShouldUpdateFunc&lt;T&gt; = (prev: T, next: T) =&gt; boolean
+type IntervalFn = () =&gt; void;
 &nbsp;
-const defaultShouldUpdate = &lt;T&gt;(pre: T, next: T) =&gt; !Object.is(pre, next)
-&nbsp;
-const usePrevious = &lt;T&gt;(value: T, shouldUpdate: ShouldUpdateFunc&lt;T&gt; = defaultShouldUpdate&lt;T&gt;): T =&gt; {
-  const [state, setState] = useState&lt;T[]&gt;([])
-&nbsp;
-  useEffect(() =&gt; {
-    setState((pre) =&gt; {
-      if (shouldUpdate(pre[1], value)) {
-        return [pre[1], value]
-      }
-      return pre
-    })
-  }, [value, shouldUpdate])
-&nbsp;
-  return state[0]
+interface Options {
+  immediate?: boolean;
 }
 &nbsp;
-const AHooksUsePrevious = <span class="fstat-no" title="function not covered" >&lt;T</span>&gt;(value: T, shouldUpdate: ShouldUpdateFunc&lt;T&gt; = <span class="branch-0 cbranch-no" title="branch not covered" >defaultShouldUpdate&lt;T&gt;)</span>: T =&gt; {
-  const preRef = <span class="cstat-no" title="statement not covered" >useRef&lt;T&gt;()</span>
-  const curRef = <span class="cstat-no" title="statement not covered" >useRef&lt;T&gt;()</span>
-  
-<span class="cstat-no" title="statement not covered" >  if (shouldUpdate(curRef.current, value)) {</span>
-<span class="cstat-no" title="statement not covered" >    preRef.current = curRef.current</span>
-<span class="cstat-no" title="statement not covered" >    curRef.current = value</span>
-  }
+const useInterval = (callback: IntervalFn, delay: number, options: Options = {}) =&gt; {
+	const callbackRef = useRef&lt;IntervalFn&gt;(callback);
+	const intervalRef = useRef&lt;NodeJS.Timer&gt;();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return preRef.current</span>
-}
+	const clear = useCallback(() =&gt; {
+		clearInterval(intervalRef.current);
+	}, []);
 &nbsp;
-export default usePrevious </pre></td></tr></table></pre>
+	useEffect(() =&gt; {
+    if (!isNumber(delay) || delay &lt;= 0) return
+    if (options.immediate) {
+      callbackRef.current();
+    }
+		intervalRef.current = setInterval(callbackRef.current, delay);
+		return clear;
+	}, [delay]);
+&nbsp;
+	return clear;
+};
+&nbsp;
+export default useInterval;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-16T03:38:42.348Z
+                at 2023-04-27T12:11:19.044Z
             </div>
         <script src="prettify.js"></script>
         <script>
