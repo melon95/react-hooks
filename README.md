@@ -55,9 +55,9 @@
 - [x] useDeepCompareEffect
 - [x] useDeepCompareLayoutEffect
 - [x] useInterval
-- [ ] useRafInterval
+- [x] useRafInterval
 - [x] useTimeout
-- [ ] useRafTimeout
+- [x] useRafTimeout
 - [ ] useLockFn
 - [ ] useUpdate
 
