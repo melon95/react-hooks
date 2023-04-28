@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682661649341" clover="3.2.0">
-  <project timestamp="1682661649341" name="All files">
-    <metrics statements="330" coveredstatements="315" conditionals="123" coveredconditionals="93" methods="120" coveredmethods="115" elements="573" coveredelements="523" complexity="0" loc="330" ncloc="330" packages="35" files="38" classes="38"/>
+<coverage generated="1682663890298" clover="3.2.0">
+  <project timestamp="1682663890298" name="All files">
+    <metrics statements="333" coveredstatements="318" conditionals="123" coveredconditionals="93" methods="123" coveredmethods="118" elements="579" coveredelements="529" complexity="0" loc="333" ncloc="333" packages="36" files="39" classes="39"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -212,6 +212,15 @@
         <line num="15" count="4" type="stmt"/>
         <line num="16" count="4" type="stmt"/>
         <line num="19" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="effect.useUpdate">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/effect/useUpdate/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
       </file>
     </package>
     <package name="effect.useUpdateEffect">

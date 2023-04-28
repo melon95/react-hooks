@@ -59,7 +59,7 @@
 - [x] useTimeout
 - [x] useRafTimeout
 - [ ] useLockFn
-- [ ] useUpdate
+- [x] useUpdate
 
 ### DOM
 - [ ] useEventLIstener
