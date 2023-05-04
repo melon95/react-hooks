@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -89,24 +89,32 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -117,38 +125,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useCallback, useEffect, useRef } from "react"
 &nbsp;
-interface Options {
-  target?: HTMLElement | Window
-  capture?: boolean
-  once?: boolean
-  passive?: boolean
-}
+type Target = Element
+type EventName = keyof DocumentEventMap
 &nbsp;
-&nbsp;
-const useEventListener = (eventName: string, handler: (e: Event) =&gt; void, options: Options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt; {
-  const { target = <span class="branch-0 cbranch-no" title="branch not covered" >window,</span> capture = false, once = false, passive = false } = options
-  const handlerRef = useRef(handler)
-&nbsp;
-  const eventHandler = useCallback((e: Event) =&gt; {
-    handlerRef.current(e)
-  }, [])
+const useClickAway = (onClickAway: (e: Event) =&gt; void, target: Target | Target[], eventName: EventName | EventName[] = ['click']) =&gt; {
+  const handlerRef = useRef(onClickAway)
+  const targetRef = useRef(target)
+  targetRef.current = target
+  const handler = useCallback((e: Event) =&gt; {
+      const target = Array.isArray(targetRef.current) ? targetRef.current : [targetRef.current]
+			const isAway = !target.some((el) =&gt; el.contains(e.target as Node));
+      console.log('isAway', isAway)
+			if (isAway) {
+				handlerRef.current(e);
+			}
+		}, [])
   useEffect(() =&gt; {
-    target.addEventListener(eventName, eventHandler, { capture, once, passive })
+    const events = Array.isArray(eventName) ? eventName : <span class="branch-1 cbranch-no" title="branch not covered" >[eventName]</span>
+    events.forEach((name) =&gt; {
+      document.addEventListener(name, handler)
+    })
     return () =&gt; {
-      target.removeEventListener(eventName, eventHandler, { capture })
+      events.forEach((name) =&gt; {
+        document.removeEventListener(name, handler)
+      })
     }
-  })
+  }, [])
 }
 &nbsp;
-&nbsp;
-export default useEventListener</pre></td></tr></table></pre>
+export default useClickAway</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T11:19:23.375Z
+                at 2023-05-04T12:13:52.730Z
             </div>
         <script src="prettify.js"></script>
         <script>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683199201845" clover="3.2.0">
-  <project timestamp="1683199201845" name="All files">
-    <metrics statements="354" coveredstatements="337" conditionals="130" coveredconditionals="98" methods="129" coveredmethods="124" elements="613" coveredelements="559" complexity="0" loc="354" ncloc="354" packages="38" files="41" classes="41"/>
+<coverage generated="1683202633963" clover="3.2.0">
+  <project timestamp="1683202633963" name="All files">
+    <metrics statements="374" coveredstatements="357" conditionals="137" coveredconditionals="104" methods="137" coveredmethods="132" elements="648" coveredelements="593" complexity="0" loc="374" ncloc="374" packages="40" files="43" classes="43"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -21,6 +21,28 @@
         <line num="34" count="2" type="stmt"/>
         <line num="36" count="5" type="stmt"/>
         <line num="42" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="dom.useClickAway">
+      <metrics statements="16" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="7" coveredmethods="7"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dom/useClickAway/index.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="7" coveredmethods="7"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
       </file>
     </package>
     <package name="dom.useEventListener">
@@ -560,6 +582,16 @@
         <line num="46" count="4" type="stmt"/>
         <line num="47" count="4" type="stmt"/>
         <line num="50" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="useLatest">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useLatest/index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
       </file>
     </package>
     <package name="utils">
