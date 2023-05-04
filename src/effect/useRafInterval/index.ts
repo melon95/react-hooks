@@ -1,5 +1,6 @@
 import { isNumber } from "lodash-es"
 import { useCallback, useEffect, useRef } from "react"
+import useLatest from "../../useLatest"
 
 type RafIntervalCallback = () => void
 
@@ -37,8 +38,7 @@ const createRafInterval = (callback: RafIntervalCallback, delay: Delay): Handler
 }
 
 const useRafInterval = (effect: RafIntervalCallback, delay: Delay, options: Options = {}) => {
-  const timeRef = useRef<number>(Date.now())
-  const callbackRef = useRef(effect)
+  const callbackRef = useLatest(effect)
   const rafReturnRef = useRef<Handler>()
 
   const clear = useCallback(() => {

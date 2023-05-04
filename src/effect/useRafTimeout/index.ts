@@ -1,5 +1,6 @@
 import { isNumber } from "lodash-es"
 import { useEffect, useRef } from "react"
+import useLatest from "../../useLatest"
 
 type RafTimeoutCallback = () => void
 interface Handler {
@@ -30,7 +31,7 @@ const createRafTimeout = (callback: RafTimeoutCallback, delay: number) => {
 }
 
 const useRafTimeout  = (effect: RafTimeoutCallback, delay: number) => {
-  const callbackRef = useRef(effect)
+  const callbackRef = useLatest(effect)
   const timerRef = useRef<Handler>()
 
   const clear = () => {

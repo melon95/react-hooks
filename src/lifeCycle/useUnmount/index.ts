@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import useLatest from "../../useLatest";
 import { isDev, isFunction } from "../../utils";
 
 const useUnmount = (callback: () => void) => {
@@ -9,8 +10,7 @@ const useUnmount = (callback: () => void) => {
 			);
 		}
 	}
-	const callbackRef = useRef(callback);
-	callbackRef.current = callback;
+	const callbackRef = useLatest(callback);
 	useEffect(() => {
 		return () => {
 			callbackRef.current?.();

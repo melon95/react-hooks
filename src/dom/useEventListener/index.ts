@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from "react"
+import useLatest from "../../useLatest"
 
 interface Options {
   target?: HTMLElement | Window
@@ -10,7 +11,7 @@ interface Options {
 
 const useEventListener = (eventName: string, handler: (e: Event) => void, options: Options = {}) => {
   const { target = window, capture = false, once = false, passive = false } = options
-  const handlerRef = useRef(handler)
+  const handlerRef = useLatest(handler)
 
   const eventHandler = useCallback((e: Event) => {
     handlerRef.current(e)
