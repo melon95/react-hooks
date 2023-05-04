@@ -62,7 +62,7 @@
 - [x] useUpdate
 
 ### DOM
-- [ ] useEventLIstener
+- [x] useEventLIstener
 - [ ] useClickAway
 - [ ] useDocumentVisibility
 - [ ] useDrop
