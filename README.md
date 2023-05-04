@@ -64,7 +64,7 @@
 ### DOM
 - [x] useEventLIstener
 - [x] useClickAway
-- [ ] useDocumentVisibility
+- [x] useDocumentVisibility
 - [ ] useDrop
 - [ ] useDrag
 - [ ] useEventTarget

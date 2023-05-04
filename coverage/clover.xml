@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683202944410" clover="3.2.0">
-  <project timestamp="1683202944410" name="All files">
-    <metrics statements="372" coveredstatements="355" conditionals="137" coveredconditionals="104" methods="137" coveredmethods="132" elements="646" coveredelements="591" complexity="0" loc="372" ncloc="372" packages="40" files="43" classes="43"/>
+<coverage generated="1683204014423" clover="3.2.0">
+  <project timestamp="1683204014423" name="All files">
+    <metrics statements="380" coveredstatements="363" conditionals="139" coveredconditionals="106" methods="140" coveredmethods="135" elements="659" coveredelements="604" complexity="0" loc="380" ncloc="380" packages="41" files="44" classes="44"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -45,19 +45,33 @@
         <line num="25" count="2" type="stmt"/>
       </file>
     </package>
+    <package name="dom.useDocumentVisibility">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dom/useDocumentVisibility/index.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+      </file>
+    </package>
     <package name="dom.useEventListener">
       <metrics statements="9" coveredstatements="9" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dom/useEventListener/index.ts">
         <metrics statements="9" coveredstatements="9" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="4"/>
-        <line num="12" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="13" count="2" type="cond" truecount="3" falsecount="1"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="14" count="5" type="cond" truecount="3" falsecount="1"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
       </file>
     </package>
     <package name="effect.createDeepCompareEffect">
@@ -586,10 +600,10 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useLatest/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="13" type="stmt"/>
-        <line num="4" count="55" type="stmt"/>
-        <line num="5" count="55" type="stmt"/>
-        <line num="6" count="55" type="stmt"/>
+        <line num="3" count="14" type="stmt"/>
+        <line num="4" count="58" type="stmt"/>
+        <line num="5" count="58" type="stmt"/>
+        <line num="6" count="58" type="stmt"/>
       </file>
     </package>
     <package name="utils">

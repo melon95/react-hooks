@@ -1,15 +1,16 @@
-import { useCallback, useEffect, useRef } from "react"
+import { useCallback, useEffect } from "react"
 import useLatest from "../../useLatest"
 
 interface Options {
-  target?: HTMLElement | Window
+  target?: HTMLElement | Window | Document
   capture?: boolean
   once?: boolean
   passive?: boolean
 }
 
+type EventName = keyof DocumentEventMap
 
-const useEventListener = (eventName: string, handler: (e: Event) => void, options: Options = {}) => {
+const useEventListener = (eventName: EventName, handler: (e: Event) => void, options: Options = {}) => {
   const { target = window, capture = false, once = false, passive = false } = options
   const handlerRef = useLatest(handler)
 
