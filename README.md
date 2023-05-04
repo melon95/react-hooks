@@ -67,7 +67,7 @@
 - [x] useDocumentVisibility
 - [ ] useDrop
 - [ ] useDrag
-- [ ] useEventTarget
+- [x] useEventTarget
 - [ ] useExternal
 - [ ] useTitle
 - [ ] useFavicon

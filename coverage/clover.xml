@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683204014423" clover="3.2.0">
-  <project timestamp="1683204014423" name="All files">
-    <metrics statements="380" coveredstatements="363" conditionals="139" coveredconditionals="106" methods="140" coveredmethods="135" elements="659" coveredelements="604" complexity="0" loc="380" ncloc="380" packages="41" files="44" classes="44"/>
+<coverage generated="1683205164922" clover="3.2.0">
+  <project timestamp="1683205164922" name="All files">
+    <metrics statements="388" coveredstatements="371" conditionals="141" coveredconditionals="108" methods="144" coveredmethods="139" elements="673" coveredelements="618" complexity="0" loc="388" ncloc="388" packages="42" files="45" classes="45"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -72,6 +72,20 @@
         <line num="21" count="5" type="stmt"/>
         <line num="22" count="5" type="stmt"/>
         <line num="23" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="dom.useEventTarget">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dom/useEventTarget/index.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
+        <line num="21" count="9" type="stmt"/>
       </file>
     </package>
     <package name="effect.createDeepCompareEffect">
@@ -600,10 +614,10 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useLatest/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="14" type="stmt"/>
-        <line num="4" count="58" type="stmt"/>
-        <line num="5" count="58" type="stmt"/>
-        <line num="6" count="58" type="stmt"/>
+        <line num="3" count="15" type="stmt"/>
+        <line num="4" count="67" type="stmt"/>
+        <line num="5" count="67" type="stmt"/>
+        <line num="6" count="67" type="stmt"/>
       </file>
     </package>
     <package name="utils">
