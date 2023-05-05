@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683287803919" clover="3.2.0">
-  <project timestamp="1683287803919" name="All files">
-    <metrics statements="451" coveredstatements="434" conditionals="169" coveredconditionals="134" methods="158" coveredmethods="153" elements="778" coveredelements="721" complexity="0" loc="451" ncloc="451" packages="44" files="47" classes="47"/>
+<coverage generated="1683289101053" clover="3.2.0">
+  <project timestamp="1683289101053" name="All files">
+    <metrics statements="461" coveredstatements="444" conditionals="173" coveredconditionals="138" methods="160" coveredmethods="155" elements="794" coveredelements="737" complexity="0" loc="461" ncloc="461" packages="45" files="48" classes="48"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -147,6 +147,22 @@
         <line num="153" count="9" type="stmt"/>
         <line num="154" count="9" type="stmt"/>
         <line num="158" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="dom.useFavicon">
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dom/useFavicon/index.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
       </file>
     </package>
     <package name="dom.useTitle">

@@ -70,7 +70,7 @@
 - [x] useEventTarget
 - [x] useExternal
 - [x] useTitle
-- [ ] useFavicon
+- [x] useFavicon
 - [ ] useFullscreen
 - [ ] useHover
 - [ ] useMutationObserver
