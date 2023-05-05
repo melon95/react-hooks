@@ -69,7 +69,7 @@
 - [ ] useDrag
 - [x] useEventTarget
 - [x] useExternal
-- [ ] useTitle
+- [x] useTitle
 - [ ] useFavicon
 - [ ] useFullscreen
 - [ ] useHover

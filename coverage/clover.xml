@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683287241677" clover="3.2.0">
-  <project timestamp="1683287241677" name="All files">
-    <metrics statements="445" coveredstatements="428" conditionals="166" coveredconditionals="131" methods="155" coveredmethods="150" elements="766" coveredelements="709" complexity="0" loc="445" ncloc="445" packages="43" files="46" classes="46"/>
+<coverage generated="1683287803919" clover="3.2.0">
+  <project timestamp="1683287803919" name="All files">
+    <metrics statements="451" coveredstatements="434" conditionals="169" coveredconditionals="134" methods="158" coveredmethods="153" elements="778" coveredelements="721" complexity="0" loc="451" ncloc="451" packages="44" files="47" classes="47"/>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -147,6 +147,18 @@
         <line num="153" count="9" type="stmt"/>
         <line num="154" count="9" type="stmt"/>
         <line num="158" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="dom.useTitle">
+      <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dom/useTitle/index.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
       </file>
     </package>
     <package name="effect.createDeepCompareEffect">
