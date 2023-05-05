@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.15% </span>
+                <span class="strong">96.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/26</span>
+                <span class='fraction'>26/27</span>
             </div>
         
             
@@ -121,7 +121,8 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,6 +131,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -167,7 +169,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -179,72 +180,74 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from "lodash-es"
-import { useEffect, useRef } from "react"
-import useLatest from "../../useLatest"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from "lodash-es";
+import { useEffect, useRef } from "react";
+import useLatest from "../../useLatest";
 &nbsp;
-type RafTimeoutCallback = () =&gt; void
+type RafTimeoutCallback = () =&gt; void;
 interface Handler {
-  id: number | NodeJS.Timer
+	id: number | NodeJS.Timer;
 }
 &nbsp;
-const RequestAnimationFrameIsDefined = () =&gt; typeof requestAnimationFrame === 'function'
+const RequestAnimationFrameIsDefined = () =&gt;
+	typeof requestAnimationFrame === "function";
 &nbsp;
 const createRafTimeout = (callback: RafTimeoutCallback, delay: number) =&gt; {
-  const handler: Handler = {
-    id: 0
-  }
-  if (RequestAnimationFrameIsDefined()) {
-    const start = Date.now()
-    function loop() {
-      const now = Date.now()
-      if (now - start &gt;= delay) {
-        callback()
-      } else {
-        handler.id = requestAnimationFrame(loop)
-      }
-    }
-    handler.id = requestAnimationFrame(loop)
-  } else {
-    handler.id = setTimeout(callback, delay)
-  }
-  return handler
-}
+	const handler: Handler = {
+		id: 0,
+	};
+	if (RequestAnimationFrameIsDefined()) {
+		const start = Date.now();
+		function loop() {
+			const now = Date.now();
+			if (now - start &gt;= delay) {
+				callback();
+			} else {
+				handler.id = requestAnimationFrame(loop);
+			}
+		}
+		handler.id = requestAnimationFrame(loop);
+	} else {
+		handler.id = setTimeout(callback, delay);
+	}
+	return handler;
+};
 &nbsp;
-const useRafTimeout  = (effect: RafTimeoutCallback, delay: number) =&gt; {
-  const callbackRef = useLatest(effect)
-  const timerRef = useRef&lt;Handler&gt;()
+const useRafTimeout = (effect: RafTimeoutCallback, delay: number) =&gt; {
+	const callbackRef = useLatest(effect);
+	const timerRef = useRef&lt;Handler&gt;();
 &nbsp;
-  const clear = () =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (timerRef.current?.id) {
-      if (RequestAnimationFrameIsDefined()) {
-        cancelAnimationFrame(timerRef.current.id as number)
-      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >        clearTimeout(timerRef.current.id as NodeJS.Timer)</span>
-      }
-    }
+	const clear = () =&gt; {
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (timerRef.current?.id) {
+			if (RequestAnimationFrameIsDefined()) {
+				cancelAnimationFrame(timerRef.current.id as number);
+			} else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >				clearTimeout(timerRef.current.id as NodeJS.Timer);</span>
+			}
+		}
+	};
 &nbsp;
-  }
+	useEffect(() =&gt; {
+		if (!isNumber(delay) || delay &lt; 0) return;
+		timerRef.current = createRafTimeout(() =&gt; {
+			callbackRef.current();
+		}, delay);
+		return clear;
+	}, []);
 &nbsp;
-  useEffect(() =&gt; {
-    if (!isNumber(delay) || delay &lt; 0) return
-    timerRef.current = createRafTimeout(() =&gt; {
-     callbackRef.current()
-    }, delay)
-    return clear
-  }, [])
+	return clear;
+};
 &nbsp;
-  return clear
-}
-&nbsp;
-export default useRafTimeout</pre></td></tr></table></pre>
+export default useRafTimeout;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T12:59:24.893Z
+                at 2023-05-05T11:47:21.649Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

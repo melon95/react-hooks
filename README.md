@@ -68,7 +68,7 @@
 - [ ] useDrop
 - [ ] useDrag
 - [x] useEventTarget
-- [ ] useExternal
+- [x] useExternal
 - [ ] useTitle
 - [ ] useFavicon
 - [ ] useFullscreen

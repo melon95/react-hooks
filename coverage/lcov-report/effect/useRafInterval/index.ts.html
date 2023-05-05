@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
@@ -130,7 +130,16 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,9 +155,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,6 +183,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,81 +214,91 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from "lodash-es"
-import { useCallback, useEffect, useRef } from "react"
-import useLatest from "../../useLatest"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from "lodash-es";
+import { useCallback, useEffect, useRef } from "react";
+import useLatest from "../../useLatest";
 &nbsp;
-type RafIntervalCallback = () =&gt; void
+type RafIntervalCallback = () =&gt; void;
 &nbsp;
-type Delay = number
+type Delay = number;
 &nbsp;
 interface Options {
-  immediate?: boolean
+	immediate?: boolean;
 }
 &nbsp;
 interface Handler {
-  id: number | NodeJS.Timer
+	id: number | NodeJS.Timer;
 }
 &nbsp;
-const RequestAnimationFrameIsDefined = () =&gt; typeof requestAnimationFrame === 'function'
+const RequestAnimationFrameIsDefined = () =&gt;
+	typeof requestAnimationFrame === "function";
 &nbsp;
-const createRafInterval = (callback: RafIntervalCallback, delay: Delay): Handler =&gt; {
-  const handler: Handler = {
-    id: 0
-  }
-  if (RequestAnimationFrameIsDefined()) {
-    let start = Date.now()
-    const loop = () =&gt; {
-        const now = Date.now()
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (now - start &gt;= delay) {
-        start = now
-        callback()
-      }
-      handler.id = requestAnimationFrame(loop)
-    }
-    handler.id = requestAnimationFrame(loop)
-  } else {
-    handler.id = setInterval(callback, delay)
-  }
-  return handler
-}
+const createRafInterval = (
+	callback: RafIntervalCallback,
+	delay: Delay,
+): Handler =&gt; {
+	const handler: Handler = {
+		id: 0,
+	};
+	if (RequestAnimationFrameIsDefined()) {
+		let start = Date.now();
+		const loop = () =&gt; {
+			const now = Date.now();
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (now - start &gt;= delay) {
+				start = now;
+				callback();
+			}
+			handler.id = requestAnimationFrame(loop);
+		};
+		handler.id = requestAnimationFrame(loop);
+	} else {
+		handler.id = setInterval(callback, delay);
+	}
+	return handler;
+};
 &nbsp;
-const useRafInterval = (effect: RafIntervalCallback, delay: Delay, options: Options = {}) =&gt; {
-  const callbackRef = useLatest(effect)
-  const rafReturnRef = useRef&lt;Handler&gt;()
+const useRafInterval = (
+	effect: RafIntervalCallback,
+	delay: Delay,
+	options: Options = {},
+) =&gt; {
+	const callbackRef = useLatest(effect);
+	const rafReturnRef = useRef&lt;Handler&gt;();
 &nbsp;
-  const clear = useCallback(() =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (rafReturnRef.current?.id) {
-      if (RequestAnimationFrameIsDefined()) {
-        cancelAnimationFrame(rafReturnRef.current.id as number)
-      } else {
-        clearTimeout(rafReturnRef.current.id)
-      }
-    }
-  }, [])
+	const clear = useCallback(() =&gt; {
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (rafReturnRef.current?.id) {
+			if (RequestAnimationFrameIsDefined()) {
+				cancelAnimationFrame(rafReturnRef.current.id as number);
+			} else {
+				clearTimeout(rafReturnRef.current.id);
+			}
+		}
+	}, []);
 &nbsp;
-  useEffect(() =&gt; {
-    if (!isNumber(delay) || delay &lt; 0) return
-    if (options.immediate) {
-      callbackRef.current()
-    }
-    rafReturnRef.current = createRafInterval(() =&gt; {
-      callbackRef.current()
-    }, delay)
-    return clear
-  }, [delay])
+	useEffect(() =&gt; {
+		if (!isNumber(delay) || delay &lt; 0) return;
+		if (options.immediate) {
+			callbackRef.current();
+		}
+		rafReturnRef.current = createRafInterval(() =&gt; {
+			callbackRef.current();
+		}, delay);
+		return clear;
+	}, [delay]);
 &nbsp;
-  return clear
-}
+	return clear;
+};
 &nbsp;
-export default useRafInterval</pre></td></tr></table></pre>
+export default useRafInterval;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-04T12:59:24.893Z
+                at 2023-05-05T11:47:21.649Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -1,19 +1,22 @@
-import { useCallback, useState } from "react"
-import isBrowser from "../../utils/isBrowser"
-import useEventListener from "../useEventListener"
+import { useCallback, useState } from "react";
+import isBrowser from "../../utils/isBrowser";
+import useEventListener from "../useEventListener";
 
 const getVisibilityState = (): DocumentVisibilityState => {
-  return isBrowser ? document.visibilityState : 'visible'
-}
+	return isBrowser ? document.visibilityState : "visible";
+};
 
 const useDocumentVisibility = (): DocumentVisibilityState => {
-  const [visibilityState, setVisibilityState] = useState<DocumentVisibilityState>(getVisibilityState())
-  const handleVisibilityChange = useCallback(() => {
-    setVisibilityState(getVisibilityState())
-  }, [])
+	const [visibilityState, setVisibilityState] =
+		useState<DocumentVisibilityState>(getVisibilityState());
+	const handleVisibilityChange = useCallback(() => {
+		setVisibilityState(getVisibilityState());
+	}, []);
 
-  useEventListener('visibilitychange', handleVisibilityChange, { target: document })
-  return visibilityState
-} 
+	useEventListener("visibilitychange", handleVisibilityChange, {
+		target: document,
+	});
+	return visibilityState;
+};
 
-export default useDocumentVisibility
+export default useDocumentVisibility;

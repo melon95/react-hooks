@@ -1,28 +1,33 @@
-import { useCallback, useState } from 'react'
-import useLatest from '../../useLatest'
+import { useCallback, useState } from "react";
+import useLatest from "../../useLatest";
 
 interface Options {
-  initialValue?: string
-  transformer?: <T>(value: string) => T
+	initialValue?: string;
+	transformer?: <T>(value: string) => T;
 }
 
 const useEventTarget = (options: Options = {}) => {
-  const { transformer = (v) => v, initialValue } = options
-  const [value, setValue] = useState(initialValue)
+	const { transformer = (v) => v, initialValue } = options;
+	const [value, setValue] = useState(initialValue);
 
-  const transformerRef = useLatest(transformer)
+	const transformerRef = useLatest(transformer);
 
-  const reset = useCallback(() => {
-     setValue(initialValue)
-  }, [])
+	const reset = useCallback(() => {
+		setValue(initialValue);
+	}, []);
 
-  const onChange = useCallback((event: any) => setValue(transformerRef.current(event.target.value)), [])
+	const onChange = useCallback(
+		(event: any) => setValue(transformerRef.current(event.target.value)),
+		[],
+	);
 
-  return [value, {
-    reset,
-    onChange
-  }] as const
-}
+	return [
+		value,
+		{
+			reset,
+			onChange,
+		},
+	] as const;
+};
 
-
-export default useEventTarget
+export default useEventTarget;
