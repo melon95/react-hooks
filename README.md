@@ -71,7 +71,7 @@
 - [x] useExternal
 - [x] useTitle
 - [x] useFavicon
-- [ ] useFullscreen
+- [x] useFullscreen
 - [ ] useHover
 - [ ] useMutationObserver
 - [ ] useInViewport
