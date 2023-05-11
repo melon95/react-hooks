@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useLatest from "../../useLatest";
+import useLatest from "../../advanced/useLatest";
 import { isDev, isFunction } from "../../utils";
 
 const useUnmount = (callback: () => void) => {

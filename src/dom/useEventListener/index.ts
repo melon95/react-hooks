@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import useLatest from "../../useLatest";
+import useLatest from "../../advanced/useLatest";
 
 interface Options {
 	target?: HTMLElement | Window | Document;

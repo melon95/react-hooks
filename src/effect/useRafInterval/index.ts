@@ -1,6 +1,6 @@
 import { isNumber } from "lodash-es";
 import { useCallback, useEffect, useRef } from "react";
-import useLatest from "../../useLatest";
+import useLatest from "../../advanced/useLatest";
 
 type RafIntervalCallback = () => void;
 

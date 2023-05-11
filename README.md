@@ -90,8 +90,8 @@
 - [ ] useCreation
 - [ ] useEventEmitter
 - [ ] useIsomorphicLayoutEffect
-- [ ] useLatest
-- [ ] useMemoizedFn
+- [x] useLatest
+- [x] useMemoizedFns
 - [ ] useReactive
 
 ### Dev

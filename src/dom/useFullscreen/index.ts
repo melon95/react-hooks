@@ -2,9 +2,9 @@ import { isBoolean } from "lodash-es";
 import type { RefObject } from "react";
 import { useState } from "react";
 import screenfull from "screenfull";
+import useLatest from "../../advanced/useLatest";
+import useMemoizedFn from "../../advanced/useMemoizedFn";
 import useUnmount from "../../lifeCycle/useUnmount";
-import useLatest from "../../useLatest";
-import useMemoizedFn from "../../useMemoizedFn";
 
 export type BasicTarget =
 	| HTMLElement

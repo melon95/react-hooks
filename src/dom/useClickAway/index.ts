@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import useLatest from "../../useLatest";
+import useLatest from "../../advanced/useLatest";
 
 type Target = Element;
 type EventName = keyof DocumentEventMap;

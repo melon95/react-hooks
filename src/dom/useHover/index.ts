@@ -1,6 +1,6 @@
 import { isFunction } from "lodash-es"
 import { RefObject, useEffect, useState } from "react"
-import useMemoizedFn from "../../useMemoizedFn"
+import useMemoizedFn from "../../advanced/useMemoizedFn"
 
 type BasicTarget = HTMLElement | (() => HTMLElement) | RefObject<HTMLElement> | null
 

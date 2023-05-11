@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import useLatest from "../../useLatest";
+import useLatest from "../../advanced/useLatest";
 
 interface Options {
 	initialValue?: string;

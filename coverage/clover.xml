@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683770552559" clover="3.2.0">
-  <project timestamp="1683770552559" name="All files">
+<coverage generated="1683771086664" clover="3.2.0">
+  <project timestamp="1683771086664" name="All files">
     <metrics statements="566" coveredstatements="545" conditionals="234" coveredconditionals="183" methods="180" coveredmethods="175" elements="980" coveredelements="903" complexity="0" loc="566" ncloc="566" packages="48" files="51" classes="51"/>
+    <package name="advanced.useLatest">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useLatest/index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="257" type="stmt"/>
+        <line num="5" count="257" type="stmt"/>
+        <line num="6" count="257" type="stmt"/>
+      </file>
+    </package>
+    <package name="advanced.useMemoizedFn">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useMemoizedFn/index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="112" type="stmt"/>
+        <line num="7" count="112" type="stmt"/>
+        <line num="8" count="35" type="stmt"/>
+        <line num="11" count="112" type="stmt"/>
+      </file>
+    </package>
     <package name="createStorageState">
       <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/createStorageState/index.ts">
@@ -811,27 +832,6 @@
         <line num="46" count="4" type="stmt"/>
         <line num="47" count="4" type="stmt"/>
         <line num="50" count="4" type="stmt"/>
-      </file>
-    </package>
-    <package name="useLatest">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useLatest/index.ts">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="18" type="stmt"/>
-        <line num="4" count="257" type="stmt"/>
-        <line num="5" count="257" type="stmt"/>
-        <line num="6" count="257" type="stmt"/>
-      </file>
-    </package>
-    <package name="useMemoizedFn">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/useMemoizedFn/index.ts">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="112" type="stmt"/>
-        <line num="7" count="112" type="stmt"/>
-        <line num="8" count="35" type="stmt"/>
-        <line num="11" count="112" type="stmt"/>
       </file>
     </package>
     <package name="utils">
