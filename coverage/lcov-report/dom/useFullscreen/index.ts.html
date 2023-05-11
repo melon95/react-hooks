@@ -210,7 +210,15 @@
 <a name='L145'></a><a href='#L145'>145</a>
 <a name='L146'></a><a href='#L146'>146</a>
 <a name='L147'></a><a href='#L147'>147</a>
-<a name='L148'></a><a href='#L148'>148</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -357,150 +365,154 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isBoolean } from 'lodash-es';
-import type { RefObject } from 'react';
-import { useState } from 'react';
-import screenfull from 'screenfull';
-import useUnmount from '../../lifeCycle/useUnmount';
-import useLatest from '../../useLatest';
-import useMemoizedFn from '../../useMemoizedFn';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isBoolean } from "lodash-es";
+import type { RefObject } from "react";
+import { useState } from "react";
+import screenfull from "screenfull";
+import useUnmount from "../../lifeCycle/useUnmount";
+import useLatest from "../../useLatest";
+import useMemoizedFn from "../../useMemoizedFn";
 &nbsp;
-export type BasicTarget = HTMLElement | (() =&gt; HTMLElement) | RefObject&lt;HTMLElement&gt; | null;
+export type BasicTarget =
+	| HTMLElement
+	| (() =&gt; HTMLElement)
+	| RefObject&lt;HTMLElement&gt;
+	| null;
 &nbsp;
 interface PageFullscreen {
-  className?: string;
-  zIndex?: number;
+	className?: string;
+	zIndex?: number;
 }
 &nbsp;
 export interface Options {
-  onExit?: () =&gt; void;
-  onEnter?: () =&gt; void;
+	onExit?: () =&gt; void;
+	onEnter?: () =&gt; void;
 &nbsp;
-  pageFullscreen?: boolean | PageFullscreen;
+	pageFullscreen?: boolean | PageFullscreen;
 }
 &nbsp;
-const DefaultClassName = 'react-hooks-fullscreen';
+const DefaultClassName = "react-hooks-fullscreen";
 &nbsp;
 const getFullscreen = () =&gt; screenfull.isFullscreen;
 const getFullscreenEnabled = () =&gt; screenfull.isEnabled;
 const getFullscreenElement = () =&gt; screenfull.element;
 &nbsp;
 const getTargetElement = (target: BasicTarget): HTMLElement =&gt; {
-  if (!target) return null
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof target === 'function') {
-<span class="cstat-no" title="statement not covered" >    return target();</span>
-  }
-  <span class="missing-if-branch" title="if path not taken" >I</span>if ('current' in target) {
-<span class="cstat-no" title="statement not covered" >    return target.current;</span>
-  }
-  return target;
+	if (!target) return null;
+	<span class="missing-if-branch" title="if path not taken" >I</span>if (typeof target === "function") {
+<span class="cstat-no" title="statement not covered" >		return target();</span>
+	}
+	<span class="missing-if-branch" title="if path not taken" >I</span>if ("current" in target) {
+<span class="cstat-no" title="statement not covered" >		return target.current;</span>
+	}
+	return target;
 };
 &nbsp;
 const useFullscreen = (target: BasicTarget, options: Options = {}) =&gt; {
-  const [state, setState] = useState(false);
-  const { onEnter, onExit, pageFullscreen = false } = options;
-  const { className = DefaultClassName, zIndex = 9999 } =
-    (isBoolean(pageFullscreen) || !pageFullscreen) ? {} : pageFullscreen;
+	const [state, setState] = useState(false);
+	const { onEnter, onExit, pageFullscreen = false } = options;
+	const { className = DefaultClassName, zIndex = 9999 } =
+		isBoolean(pageFullscreen) || !pageFullscreen ? {} : pageFullscreen;
 &nbsp;
-  const onEnterCallback = useLatest(onEnter);
-  const onExitCallback = useLatest(onExit);
+	const onEnterCallback = useLatest(onEnter);
+	const onExitCallback = useLatest(onExit);
 &nbsp;
-  const invokeCallback = (isFullscreen: boolean) =&gt; {
-    if (isFullscreen) {
-      onEnterCallback.current?.();
-    } else {
-      onExitCallback.current?.();
-    }
-  };
+	const invokeCallback = (isFullscreen: boolean) =&gt; {
+		if (isFullscreen) {
+			onEnterCallback.current?.();
+		} else {
+			onExitCallback.current?.();
+		}
+	};
 &nbsp;
-  const onFullscreenChange = useMemoizedFn(() =&gt; {
-    if (!getFullscreen()) {
-      setState(false);
-      invokeCallback(false);
-      screenfull.off('change', onFullscreenChange);
-    } else {
-      const isFullscreen = getTargetElement(target) === getFullscreenElement();
-      setState(isFullscreen);
-      invokeCallback(isFullscreen);
-    }
-  });
+	const onFullscreenChange = useMemoizedFn(() =&gt; {
+		if (!getFullscreen()) {
+			setState(false);
+			invokeCallback(false);
+			screenfull.off("change", onFullscreenChange);
+		} else {
+			const isFullscreen = getTargetElement(target) === getFullscreenElement();
+			setState(isFullscreen);
+			invokeCallback(isFullscreen);
+		}
+	});
 &nbsp;
-  const togglePageFullscreen = (pageFullscreen: boolean) =&gt; {
-    const styleElement = document.querySelector(`#${className}`);
-    const el = getTargetElement(target);
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!el) <span class="cstat-no" title="statement not covered" >return;</span>
-    if (pageFullscreen) {
-      el.classList.add(className);
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (!styleElement) {
-        const style = document.createElement('style');
-        style.id = className;
-        style.textContent = `.${className} { position: fixed; top: 0; left: 0;right: 0;bottom: 0; width: 100% !important; height: 100%!important; z-index: ${zIndex}; }`;
-        el.appendChild(style);
-      }
-    } else {
-      el.classList.remove(className);
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (styleElement) {
-        styleElement.remove();
-      }
-    }
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (state !== pageFullscreen) {
-      invokeCallback(pageFullscreen);
-      setState(pageFullscreen);
-    }
-  };
+	const togglePageFullscreen = (pageFullscreen: boolean) =&gt; {
+		const styleElement = document.querySelector(`#${className}`);
+		const el = getTargetElement(target);
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (!el) <span class="cstat-no" title="statement not covered" >return;</span>
+		if (pageFullscreen) {
+			el.classList.add(className);
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (!styleElement) {
+				const style = document.createElement("style");
+				style.id = className;
+				style.textContent = `.${className} { position: fixed; top: 0; left: 0;right: 0;bottom: 0; width: 100% !important; height: 100%!important; z-index: ${zIndex}; }`;
+				el.appendChild(style);
+			}
+		} else {
+			el.classList.remove(className);
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (styleElement) {
+				styleElement.remove();
+			}
+		}
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (state !== pageFullscreen) {
+			invokeCallback(pageFullscreen);
+			setState(pageFullscreen);
+		}
+	};
 &nbsp;
-  const enterFullscreen = () =&gt; {
-    const el = getTargetElement(target);
-    if (!el) return;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (getFullscreenEnabled()) {
-      if (pageFullscreen) {
-        togglePageFullscreen(true);
-        return;
-      }
-      screenfull.request(el);
-      screenfull.on('change', onFullscreenChange);
-    }
-  };
+	const enterFullscreen = () =&gt; {
+		const el = getTargetElement(target);
+		if (!el) return;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (getFullscreenEnabled()) {
+			if (pageFullscreen) {
+				togglePageFullscreen(true);
+				return;
+			}
+			screenfull.request(el);
+			screenfull.on("change", onFullscreenChange);
+		}
+	};
 &nbsp;
-  const exitFullscreen = () =&gt; {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!getTargetElement(target)) <span class="cstat-no" title="statement not covered" >return;</span>
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (getFullscreenEnabled()) {
-      if (pageFullscreen) {
-        togglePageFullscreen(false);
-        return;
-      }
-      if (getFullscreenElement() === getTargetElement(target)) {
-        screenfull.exit();
-      }
-    }
-  };
+	const exitFullscreen = () =&gt; {
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (!getTargetElement(target)) <span class="cstat-no" title="statement not covered" >return;</span>
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (getFullscreenEnabled()) {
+			if (pageFullscreen) {
+				togglePageFullscreen(false);
+				return;
+			}
+			if (getFullscreenElement() === getTargetElement(target)) {
+				screenfull.exit();
+			}
+		}
+	};
 &nbsp;
-  const toggleFullscreen = () =&gt; {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!getTargetElement(target)) <span class="cstat-no" title="statement not covered" >return;</span>
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (getFullscreenEnabled()) {
-      if (state) {
-        exitFullscreen();
-      } else {
-        enterFullscreen();
-      }
-    }
-  };
+	const toggleFullscreen = () =&gt; {
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (!getTargetElement(target)) <span class="cstat-no" title="statement not covered" >return;</span>
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (getFullscreenEnabled()) {
+			if (state) {
+				exitFullscreen();
+			} else {
+				enterFullscreen();
+			}
+		}
+	};
 &nbsp;
-  useUnmount(() =&gt; {
-    if (getFullscreenEnabled() &amp;&amp; !pageFullscreen) {
-        screenfull.off('change', onFullscreenChange);
-      }
-  })
+	useUnmount(() =&gt; {
+		if (getFullscreenEnabled() &amp;&amp; !pageFullscreen) {
+			screenfull.off("change", onFullscreenChange);
+		}
+	});
 &nbsp;
-  return [
-    state,
-    {
-      enterFullscreen: useMemoizedFn(enterFullscreen),
-      exitFullscreen: useMemoizedFn(exitFullscreen),
-      toggleFullscreen: useMemoizedFn(toggleFullscreen),
-      isEnabled: getFullscreenEnabled(),
-    },
-  ] as const;
+	return [
+		state,
+		{
+			enterFullscreen: useMemoizedFn(enterFullscreen),
+			exitFullscreen: useMemoizedFn(exitFullscreen),
+			toggleFullscreen: useMemoizedFn(toggleFullscreen),
+			isEnabled: getFullscreenEnabled(),
+		},
+	] as const;
 };
 &nbsp;
 export default useFullscreen;
@@ -511,7 +523,7 @@ export default useFullscreen;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-10T13:41:09.268Z
+                at 2023-05-11T02:02:32.492Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

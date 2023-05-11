@@ -72,7 +72,7 @@
 - [x] useTitle
 - [x] useFavicon
 - [x] useFullscreen
-- [ ] useHover
+- [x] useHover
 - [ ] useMutationObserver
 - [ ] useInViewport
 - [ ] useKeyPress

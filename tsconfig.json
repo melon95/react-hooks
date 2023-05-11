@@ -2,7 +2,8 @@
   "compilerOptions": {
     /* Language and Environment */
     "target": "ESNext",                                 
-    "module": "CommonJS",                               
+    "module": "CommonJS",
+    "jsx": "react",                               
 
     /* Emit */
     "removeComments": true,                          
