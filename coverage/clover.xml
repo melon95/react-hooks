@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683775505958" clover="3.2.0">
-  <project timestamp="1683775505959" name="All files">
-    <metrics statements="612" coveredstatements="585" conditionals="240" coveredconditionals="188" methods="200" coveredmethods="189" elements="1052" coveredelements="962" complexity="0" loc="612" ncloc="612" packages="49" files="53" classes="53"/>
+<coverage generated="1684068032925" clover="3.2.0">
+  <project timestamp="1684068032925" name="All files">
+    <metrics statements="623" coveredstatements="596" conditionals="253" coveredconditionals="201" methods="202" coveredmethods="191" elements="1078" coveredelements="988" complexity="0" loc="623" ncloc="623" packages="50" files="54" classes="54"/>
+    <package name="advanced.useControllableValue">
+      <metrics statements="11" coveredstatements="11" conditionals="13" coveredconditionals="13" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useControllableValue/index.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="13" coveredconditionals="13" methods="2" coveredmethods="2"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="12" type="cond" truecount="3" falsecount="0"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="20" count="12" type="cond" truecount="4" falsecount="0"/>
+        <line num="21" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="32" count="12" type="stmt"/>
+      </file>
+    </package>
     <package name="advanced.useLatest">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useLatest/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="19" type="stmt"/>
-        <line num="4" count="467" type="stmt"/>
-        <line num="5" count="467" type="stmt"/>
-        <line num="6" count="467" type="stmt"/>
+        <line num="3" count="20" type="stmt"/>
+        <line num="4" count="491" type="stmt"/>
+        <line num="5" count="491" type="stmt"/>
+        <line num="6" count="491" type="stmt"/>
       </file>
     </package>
     <package name="advanced.useMemoizedFn">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useMemoizedFn/index.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="322" type="stmt"/>
-        <line num="7" count="322" type="stmt"/>
-        <line num="8" count="56" type="stmt"/>
-        <line num="11" count="322" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="334" type="stmt"/>
+        <line num="7" count="334" type="stmt"/>
+        <line num="8" count="61" type="stmt"/>
+        <line num="11" count="334" type="stmt"/>
       </file>
     </package>
     <package name="createStorageState">
