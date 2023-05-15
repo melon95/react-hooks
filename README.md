@@ -87,7 +87,7 @@
 
 ### Advanced
 - [x] useControllableValue
-- [ ] useCreation
+- [x] useCreation
 - [ ] useEventEmitter
 - [ ] useIsomorphicLayoutEffect
 - [x] useLatest
