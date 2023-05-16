@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684152031076" clover="3.2.0">
-  <project timestamp="1684152031076" name="All files">
-    <metrics statements="698" coveredstatements="653" conditionals="279" coveredconditionals="215" methods="229" coveredmethods="213" elements="1206" coveredelements="1081" complexity="0" loc="698" ncloc="698" packages="53" files="57" classes="57"/>
+<coverage generated="1684223159924" clover="3.2.0">
+  <project timestamp="1684223159924" name="All files">
+    <metrics statements="710" coveredstatements="665" conditionals="283" coveredconditionals="219" methods="231" coveredmethods="215" elements="1224" coveredelements="1099" complexity="0" loc="710" ncloc="710" packages="54" files="58" classes="58"/>
     <package name="advanced.useControllableValue">
       <metrics statements="11" coveredstatements="11" conditionals="13" coveredconditionals="13" methods="2" coveredmethods="2"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useControllableValue/index.ts">
@@ -87,10 +87,10 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/advanced/useLatest/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="23" type="stmt"/>
-        <line num="4" count="522" type="stmt"/>
-        <line num="5" count="522" type="stmt"/>
-        <line num="6" count="522" type="stmt"/>
+        <line num="3" count="24" type="stmt"/>
+        <line num="4" count="540" type="stmt"/>
+        <line num="5" count="540" type="stmt"/>
+        <line num="6" count="540" type="stmt"/>
       </file>
     </package>
     <package name="advanced.useMemoizedFn">
@@ -152,6 +152,24 @@
         <line num="34" count="2" type="stmt"/>
         <line num="36" count="5" type="stmt"/>
         <line num="42" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="dev.useTrackedEffect">
+      <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="index.ts" path="/Users/melon95/repository/react-hooks/src/dev/useTrackedEffect/index.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="13" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="22" type="stmt"/>
+        <line num="20" count="11" type="stmt"/>
       </file>
     </package>
     <package name="dom.useClickAway">

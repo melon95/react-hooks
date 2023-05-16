@@ -95,5 +95,5 @@
 - [ ] useReactive
 
 ### Dev
-- [ ] useTrackedEffect
+- [x] useTrackedEffect
 - [ ] useWhyDidYouUpdate
