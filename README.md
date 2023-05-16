@@ -96,4 +96,4 @@
 
 ### Dev
 - [x] useTrackedEffect
-- [ ] useWhyDidYouUpdate
+- [x] useWhyDidYouUpdate
